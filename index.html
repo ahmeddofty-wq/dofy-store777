@@ -106,12 +106,11 @@
 
             <!-- Controls -->
             <div class="flex items-center space-x-3">
-                <!-- HAMBURGER MENU BUTTON -->
                 <button type="button" onclick="openCustomerServiceModal()" class="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 transition-all cursor-pointer flex items-center gap-1.5" title="Settings and Activity / Menu">
                     <i data-lucide="menu" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i>
                 </button>
 
-                <button type="button" onclick="toggleAppLanguage()" class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 font-mono text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5" style="color: var(--aura-main, #dfb254);" title="Switch Language (العربية / English)">
+                <button type="button" onclick="toggleAppLanguage()" class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 font-mono text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5" style="color: var(--aura-main, #dfb254);" title="Switch Language">
                     <i data-lucide="languages" class="w-4 h-4"></i>
                     <span id="langBtnLabel">EN / AR</span>
                 </button>
@@ -140,12 +139,11 @@
         <span id="floatingChatBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-rose-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg font-mono hidden">0</span>
     </button>
 
-    <!-- SETTINGS & ACTIVITY (INSTAGRAM STYLE MENU) MODAL -->
+    <!-- SETTINGS & ACTIVITY MODAL -->
     <div id="customerServiceModal" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-4">
         <div onclick="closeCustomerServiceModal()" class="absolute inset-0 bg-black/90 backdrop-blur-md"></div>
         <div class="relative w-full max-w-md glass-panel p-6 md:p-8 rounded-3xl shadow-2xl space-y-5 z-10 flex flex-col max-h-[90vh] overflow-y-auto" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
             
-            <!-- Header -->
             <div class="flex items-center justify-between border-b border-zinc-900 pb-4">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: var(--aura-glow, rgba(223, 178, 84, 0.2));">
@@ -159,13 +157,10 @@
                 <button type="button" onclick="closeCustomerServiceModal()" class="p-2 text-zinc-400 hover:text-white bg-zinc-900 rounded-xl cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
 
-            <!-- INSTAGRAM STYLE LIST ROWS (مستطيلات الخدمات والآراء) -->
             <div class="space-y-3 pt-1">
-                
-                <!-- Row 1: Customer Service & Order Actions -->
                 <div onclick="openCancellationSection()" class="bg-zinc-900/80 hover:bg-zinc-900 p-4 rounded-2xl border border-zinc-800/80 flex items-center justify-between cursor-pointer transition-all group">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-zinc-950 flex items-center justify-center border border-zinc-800 text-aura-gold" style="color: var(--aura-main, #dfb254);">
+                        <div class="w-9 h-9 rounded-xl bg-zinc-950 flex items-center justify-center border border-zinc-800" style="color: var(--aura-main, #dfb254);">
                             <i data-lucide="headphones" class="w-4 h-4"></i>
                         </div>
                         <div>
@@ -176,7 +171,6 @@
                     <i data-lucide="chevron-right" class="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors"></i>
                 </div>
 
-                <!-- Row 2: Customer Reviews & Testimonials (صفحة آراء العملاء) -->
                 <div onclick="openCustomerReviewsModal()" class="bg-zinc-900/80 hover:bg-zinc-900 p-4 rounded-2xl border border-zinc-800/80 flex items-center justify-between cursor-pointer transition-all group">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-xl bg-zinc-950 flex items-center justify-center border border-zinc-800 text-amber-400">
@@ -190,7 +184,6 @@
                     <i data-lucide="chevron-right" class="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors"></i>
                 </div>
 
-                <!-- Row 3: Live Order Chat -->
                 <div onclick="closeCustomerServiceModal(); openCustomerChatModal();" class="bg-zinc-900/80 hover:bg-zinc-900 p-4 rounded-2xl border border-zinc-800/80 flex items-center justify-between cursor-pointer transition-all group">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-xl bg-zinc-950 flex items-center justify-center border border-zinc-800 text-emerald-400">
@@ -203,14 +196,12 @@
                     </div>
                     <i data-lucide="chevron-right" class="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors"></i>
                 </div>
-
             </div>
 
-            <!-- CANCELLATION SUB-SECTION -->
             <div id="cancellationSubSection" class="hidden bg-zinc-900/60 p-4 rounded-2xl border border-zinc-800 space-y-3 mt-3">
                 <div class="flex items-center justify-between">
-                    <h4 id="csCancelSectionTitle" class="text-xs font-bold font-mono uppercase" style="color: var(--aura-main, #dfb254);">Cancel Order Request (طلب إلغاء الأوردر)</h4>
-                    <button type="button" onclick="hideCancellationSection()" class="text-zinc-400 hover:text-white text-xs underline cursor-pointer">إغلاق القائمة</button>
+                    <h4 id="csCancelSectionTitle" class="text-xs font-bold font-mono uppercase" style="color: var(--aura-main, #dfb254);">Cancel Order Request</h4>
+                    <button type="button" onclick="hideCancellationSection()" class="text-zinc-400 hover:text-white text-xs underline cursor-pointer">Close</button>
                 </div>
                 <p id="csCancelSectionDesc" class="text-xs text-zinc-400">Select your order and provide a cancellation reason or choose from pre-set options below:</p>
                 
@@ -223,23 +214,23 @@
                     </div>
 
                     <div>
-                        <label id="csReasonSelectLabel" class="text-[11px] text-zinc-400 block mb-1">Choose Cancellation Reason (أو اختر سبب جاهز)</label>
-                        <select id="cancelReasonPreset" onchange="onPresetReasonChange()" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white text-xs focus:outline-none">
-                            <option value="">-- Select a reason (اختر سبباً) --</option>
+                        <label id="csReasonSelectLabel" class="text-[11px] text-zinc-400 block mb-1">Choose Cancellation Reason</label>
+                        <select id="cancelReasonPreset" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white text-xs focus:outline-none">
+                            <option value="">-- Select a reason --</option>
                             <option value="Changed my mind / غيرت رأيى">Changed my mind / غيرت رأيى</option>
                             <option value="Ordered by mistake / تم الطلب بالخطأ">Ordered by mistake / تم الطلب بالخطأ</option>
                             <option value="Found a better price / وجدت سعراً أفضل">Found a better price / وجدت سعراً أفضل</option>
-                            <option value="Other / سبب آخر (اكتب أدناه)">Other / سبب آخر (اكتب أدناه)</option>
+                            <option value="Other / سبب آخر">Other / سبب آخر</option>
                         </select>
                     </div>
 
                     <div>
-                        <label id="csCustomReasonLabel" class="text-[11px] text-zinc-400 block mb-1">Custom Reason / Notes (سبب مخصص)</label>
-                        <textarea id="cancelReasonCustom" rows="2" placeholder="Type your reason or additional notes here..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white text-xs focus:outline-none"></textarea>
+                        <label id="csCustomReasonLabel" class="text-[11px] text-zinc-400 block mb-1">Custom Reason / Notes</label>
+                        <textarea id="cancelReasonCustom" rows="2" placeholder="Type your reason here..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white text-xs focus:outline-none"></textarea>
                     </div>
 
                     <button type="button" onclick="submitOrderCancellation()" class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider cursor-pointer shadow-lg transition-all">
-                        Submit Cancellation Request (إرسال طلب الإلغاء)
+                        Submit Cancellation Request
                     </button>
                 </div>
             </div>
@@ -247,7 +238,7 @@
         </div>
     </div>
 
-    <!-- DEDICATED CUSTOMER REVIEWS MODAL / PAGE -->
+    <!-- CUSTOMER REVIEWS MODAL -->
     <div id="customerReviewsModal" class="hidden fixed inset-0 z-[160] flex items-center justify-center p-4">
         <div onclick="closeCustomerReviewsModal()" class="absolute inset-0 bg-black/90 backdrop-blur-md"></div>
         <div class="relative w-full max-w-2xl glass-panel p-6 md:p-8 rounded-3xl shadow-2xl space-y-6 z-10 flex flex-col max-h-[90vh] overflow-y-auto" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
@@ -258,50 +249,48 @@
                         <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
                     </div>
                     <div>
-                        <h3 id="revModalTitleView" class="text-lg font-serif font-bold text-white">آراء وتقييمات العملاء (Testimonials)</h3>
-                        <p id="revModalSubView" class="text-xs text-zinc-400 font-mono">ما يقوله هواة التجميع والنخبة عن ساعات AURA</p>
+                        <h3 id="revModalTitleView" class="text-lg font-serif font-bold text-white">Customer Reviews</h3>
+                        <p id="revModalSubView" class="text-xs text-zinc-400 font-mono">Feedback from collectors &amp; clients</p>
                     </div>
                 </div>
                 <button type="button" onclick="closeCustomerReviewsModal()" class="p-2 text-zinc-400 hover:text-white bg-zinc-900 rounded-xl cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
 
-            <!-- ADD REVIEW FORM -->
             <div class="bg-zinc-900/70 p-4 rounded-2xl border border-zinc-800 space-y-3">
-                <h4 id="revFormTitleView" class="text-xs font-bold font-mono uppercase text-aura-gold" style="color: var(--aura-main, #dfb254);">أضف تقييمك ورأيك في المتجر والساعات</h4>
+                <h4 id="revFormTitleView" class="text-xs font-bold font-mono uppercase" style="color: var(--aura-main, #dfb254);">Write a Review</h4>
                 <form onsubmit="submitCustomerReview(event)" class="space-y-3 text-xs">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                            <label id="revNameLabelView" class="text-zinc-400 block mb-1">اسمك الكريم (Your Name)</label>
+                            <label id="revNameLabelView" class="text-zinc-400 block mb-1">Your Name</label>
                             <input type="text" id="reviewAuthorName" required placeholder="Ahmed Amr" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none">
                         </div>
                         <div>
-                            <label id="revRatingLabelView" class="text-zinc-400 block mb-1">التقييم بالنجوم (Rating)</label>
+                            <label id="revRatingLabelView" class="text-zinc-400 block mb-1">Rating</label>
                             <select id="reviewAuthorRating" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-amber-400 font-bold focus:outline-none">
-                                <option value="5">★★★★★ (5/5 ممتاز جداً)</option>
-                                <option value="4">★★★★☆ (4/5 جيد جداً)</option>
-                                <option value="3">★★★☆☆ (3/5 متوسط)</option>
-                                <option value="2">★★☆☆☆ (2/5 مقبول)</option>
-                                <option value="1">★☆☆☆☆ (1/5 سيء)</option>
+                                <option value="5">★★★★★ (5/5)</option>
+                                <option value="4">★★★★☆ (4/5)</option>
+                                <option value="3">★★★☆☆ (3/5)</option>
+                                <option value="2">★★☆☆☆ (2/5)</option>
+                                <option value="1">★☆☆☆☆ (1/5)</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label id="revTextLabelView" class="text-zinc-400 block mb-1">رأيك أو تجربتك مع الساعة (Your Review)</label>
-                        <textarea id="reviewAuthorText" rows="2" required placeholder="ساعات فخمة جداً جداً، خدمة العملاء ممتازة والتوصيل سريع..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none"></textarea>
+                        <label id="revTextLabelView" class="text-zinc-400 block mb-1">Your Review</label>
+                        <textarea id="reviewAuthorText" rows="2" required placeholder="Exceptional timepiece and customer service..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none"></textarea>
                     </div>
                     <div>
-                        <label id="revImgLabelView" class="text-zinc-400 block mb-1">صورة المنتج أو سكرين شوت من الشات (اختياري)</label>
+                        <label id="revImgLabelView" class="text-zinc-400 block mb-1">Photo (Optional)</label>
                         <input type="file" id="reviewImageFile" accept="image/*" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-2 py-1.5 text-zinc-300 text-xs file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-aura-gold cursor-pointer">
                     </div>
                     <button type="submit" id="revSubmitBtnView" class="w-full py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs cursor-pointer text-zinc-950" style="background-color: var(--aura-main, #dfb254);">
-                        نشر التقييم (Submit Review)
+                        Submit Review
                     </button>
                 </form>
             </div>
 
-            <!-- REVIEWS LIST CONTAINER -->
             <div class="space-y-3">
-                <h4 class="text-xs font-bold font-mono uppercase text-zinc-400">جميع تقييمات العملاء (<span id="reviewsCountBadge">0</span>)</h4>
+                <h4 class="text-xs font-bold font-mono uppercase text-zinc-400">All Reviews (<span id="reviewsCountBadge">0</span>)</h4>
                 <div id="customerReviewsList" class="space-y-3 max-h-[350px] overflow-y-auto pr-1"></div>
             </div>
 
@@ -336,7 +325,7 @@
         <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
     </section>
 
-    <!-- PROFESSIONAL PRODUCT DETAILS MODAL WITH GALLERY -->
+    <!-- PRODUCT DETAILS MODAL -->
     <div id="productDetailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
         <div onclick="closeProductDetail()" class="absolute inset-0 bg-black/90 backdrop-blur-xl"></div>
         <div class="relative w-full max-w-4xl glass-panel p-6 md:p-10 rounded-3xl shadow-2xl z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-h-[90vh] overflow-y-auto" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
@@ -458,7 +447,6 @@
                 
                 <div id="cartItemsContainer" class="py-4 space-y-3 max-h-[30vh] overflow-y-auto border-b border-zinc-900"></div>
 
-                <!-- PAYMENT & RECEIPT FORM -->
                 <div class="py-4 space-y-3 text-xs border-b border-zinc-900">
                     <div class="bg-zinc-900/60 p-3 rounded-xl border border-zinc-800 space-y-1">
                         <span id="cartInstTitleView" class="font-bold block" style="color: var(--aura-main, #dfb254);">Payment Instructions:</span>
@@ -476,11 +464,10 @@
                     </div>
                 </div>
 
-                <!-- PROMO CODE SECTION IN CART -->
                 <div class="py-3 border-b border-zinc-900 space-y-2 text-xs">
-                    <label id="cartPromoLabelView" class="text-zinc-400 block font-mono">Promo Code (كود الخصم)</label>
+                    <label id="cartPromoLabelView" class="text-zinc-400 block font-mono">Promo Code</label>
                     <div class="flex gap-2">
-                        <input type="text" id="cartPromoInput" placeholder="Enter code (e.g. AURA20)" class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono uppercase text-xs focus:outline-none">
+                        <input type="text" id="cartPromoInput" placeholder="e.g. AURA20" class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono uppercase text-xs focus:outline-none">
                         <button type="button" onclick="applyPromoCode()" class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-aura-gold text-xs font-bold hover:bg-zinc-800 cursor-pointer" style="color: var(--aura-main, #dfb254);">Apply</button>
                     </div>
                     <div id="promoFeedback" class="text-[11px] font-mono"></div>
@@ -540,42 +527,40 @@
                 </button>
             </div>
 
-            <!-- ADMIN CUSTOMIZE REVIEWS TEXTS PANEL -->
             <div class="glass-panel p-6 rounded-3xl space-y-4" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
                 <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                     <i data-lucide="star" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
-                    تعديل نصوص وعناوين قسم آراء العملاء (Customer Reviews Customizer)
+                    Customer Reviews Customizer
                 </h3>
                 <form onsubmit="saveReviewsTexts(event)" class="space-y-4 text-xs">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="text-zinc-400 block mb-1">عنوان صفحة الآراء (Modal Title)</label>
+                            <label class="text-zinc-400 block mb-1">Modal Title</label>
                             <input type="text" id="editRevModalTitle" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">وصف صفحة الآراء (Modal Subtitle)</label>
+                            <label class="text-zinc-400 block mb-1">Modal Subtitle</label>
                             <input type="text" id="editRevModalSub" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="text-zinc-400 block mb-1">عنوان صندوق إضافة رأي (Form Title)</label>
+                            <label class="text-zinc-400 block mb-1">Form Title</label>
                             <input type="text" id="editRevFormTitle" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">تسمية زرار إرسال التقييم (Submit Button)</label>
+                            <label class="text-zinc-400 block mb-1">Submit Button Text</label>
                             <input type="text" id="editRevSubmitBtn" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                     </div>
                     <button type="submit" class="px-6 py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider text-xs cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
-                        حفظ نصوص قسم الآراء
+                        Save Review Section Texts
                     </button>
                 </form>
 
-                <!-- REVIEWS MANAGEMENT TABLE (MODERATION & DELETE) -->
                 <div class="pt-4 border-t border-zinc-900 space-y-3">
                     <h4 class="text-xs font-bold font-mono uppercase text-zinc-300 flex items-center justify-between">
-                        <span>إدارة وحذف تقييمات العملاء (Reviews Moderation)</span>
+                        <span>Reviews Moderation</span>
                         <span id="adminReviewsCount" class="text-aura-gold">0 Reviews</span>
                     </h4>
                     <div class="overflow-x-auto max-h-[260px] overflow-y-auto">
@@ -595,49 +580,48 @@
                 </div>
             </div>
 
-            <!-- PROMO CODES MANAGER PANEL IN ADMIN -->
             <div class="glass-panel p-6 rounded-3xl space-y-4" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
                 <h3 class="text-base font-bold text-white flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
                     <span class="flex items-center gap-2">
                         <i data-lucide="tag" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
-                        إدارة كوبونات الخصم والبروموكود (Promo &amp; Discount Codes Manager)
+                        Promo &amp; Discount Codes Manager
                     </span>
                     <span class="text-xs text-zinc-400 font-mono" id="adminPromoCount">0 Codes</span>
                 </h3>
                 <form onsubmit="addNewPromoCode(event)" class="space-y-3 text-xs">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
                         <div>
-                            <label class="text-zinc-400 block mb-1">كود الخصم (Promo Code)</label>
+                            <label class="text-zinc-400 block mb-1">Promo Code</label>
                             <input type="text" id="newPromoCode" required placeholder="e.g. AURA20" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono uppercase focus:outline-none">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">نوع الخصم (Type)</label>
+                            <label class="text-zinc-400 block mb-1">Type</label>
                             <select id="newPromoType" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none">
-                                <option value="percent">نسبة مئوية (%)</option>
-                                <option value="fixed">مبلغ ثابت ($ / ج.م)</option>
+                                <option value="percent">Percentage (%)</option>
+                                <option value="fixed">Fixed Amount ($ / EGP)</option>
                             </select>
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">قيمة الخصم (Value)</label>
+                            <label class="text-zinc-400 block mb-1">Discount Value</label>
                             <input type="number" step="0.1" id="newPromoValue" required placeholder="20" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">الاستخدام الإجمالي (Max Uses)</label>
-                            <input type="number" id="newPromoMaxUses" placeholder="مثلاً: 100 أو فارغ" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
+                            <label class="text-zinc-400 block mb-1">Max Total Uses</label>
+                            <input type="number" id="newPromoMaxUses" placeholder="Optional" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">أقصى استخدام للعميل (Max Per Customer)</label>
-                            <input type="number" id="newPromoMaxPerCustomer" placeholder="مثلاً: 1" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
+                            <label class="text-zinc-400 block mb-1">Max Uses Per Client</label>
+                            <input type="number" id="newPromoMaxPerCustomer" placeholder="Optional" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                            <label class="text-zinc-400 block mb-1">تاريخ انتهاء الصلاحية (Expiry Date - اختيارى)</label>
+                            <label class="text-zinc-400 block mb-1">Expiry Date (Optional)</label>
                             <input type="date" id="newPromoExpiry" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                         </div>
                         <div class="flex items-end">
                             <button type="submit" class="w-full py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider text-xs cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
-                                إضافة كود خصم جديد (Add Code)
+                                Add Promo Code
                             </button>
                         </div>
                     </div>
@@ -648,8 +632,8 @@
                             <tr>
                                 <th class="p-2.5">Code</th>
                                 <th class="p-2.5">Type & Value</th>
-                                <th class="p-2.5">Total Uses (Used / Max)</th>
-                                <th class="p-2.5">Per Customer Limit</th>
+                                <th class="p-2.5">Uses (Used / Max)</th>
+                                <th class="p-2.5">Client Limit</th>
                                 <th class="p-2.5">Expiry</th>
                                 <th class="p-2.5 text-right">Actions</th>
                             </tr>
@@ -659,34 +643,32 @@
                 </div>
             </div>
 
-            <!-- EDIT CHECKOUT CART TEXTS & INSTRUCTIONS PANEL -->
             <div class="glass-panel p-6 rounded-3xl space-y-4" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
                 <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                     <i data-lucide="shopping-bag" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
-                    تعديل نصوص وتسميات سلة ودفع الطلبات (Checkout Cart Customizer)
+                    Checkout Cart Customizer
                 </h3>
                 <form onsubmit="saveCheckoutCartTexts(event)" class="space-y-4 text-xs">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="text-zinc-400 block mb-1">عنوان سلة الشراء (Cart Title)</label>
+                            <label class="text-zinc-400 block mb-1">Cart Title</label>
                             <input type="text" id="editCartTitle" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">عنوان قسم التعليمات (Payment Instructions Title)</label>
+                            <label class="text-zinc-400 block mb-1">Instructions Title</label>
                             <input type="text" id="editCartInstTitle" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white">
                         </div>
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">نصوص تفاصيل الدفع والتحويل (Payment Instructions Text)</label>
+                        <label class="text-zinc-400 block mb-1">Payment Instructions Details</label>
                         <textarea id="editCartInstDesc" rows="2" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white"></textarea>
                     </div>
                     <button type="submit" class="px-6 py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider text-xs cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
-                        حفظ وتحديث نصوص سلة الدفع
+                        Update Checkout Cart Texts
                     </button>
                 </form>
             </div>
 
-            <!-- EDIT BRAND LOGO & NAMES -->
             <div class="glass-panel p-6 rounded-3xl space-y-4">
                 <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                     <i data-lucide="image" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
@@ -704,20 +686,19 @@
                         </div>
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">Upload Custom Logo Image from Laptop</label>
+                        <label class="text-zinc-400 block mb-1">Upload Custom Logo Image</label>
                         <input type="file" id="brandLogoFile" accept="image/*" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-zinc-300 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-aura-gold cursor-pointer">
                     </div>
                     <button type="submit" class="px-6 py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider text-xs cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
-                        Save Brand &amp; Logo Settings
+                        Save Brand Settings
                     </button>
                 </form>
             </div>
 
-            <!-- THEME FRAMES & COLORS CUSTOMIZER -->
             <div class="glass-panel p-6 rounded-3xl space-y-4">
                 <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                     <i data-lucide="palette" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
-                    Customize Website &amp; Frame Colors
+                    Customize Colors &amp; Styling
                 </h3>
                 <form onsubmit="saveCustomColors(event)" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
                     <div>
@@ -728,14 +709,14 @@
                         </div>
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">Card Frame / Border Color</label>
+                        <label class="text-zinc-400 block mb-1">Card Border Color</label>
                         <div class="flex items-center gap-2">
                             <input type="color" id="pickerBorder" class="w-12 h-10 rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer">
                             <input type="text" id="textBorder" class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono">
                         </div>
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">Glow / Hover Effect Color</label>
+                        <label class="text-zinc-400 block mb-1">Glow Effect Color</label>
                         <div class="flex items-center gap-2">
                             <input type="color" id="pickerGlow" class="w-12 h-10 rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer">
                             <input type="text" id="textGlow" class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono">
@@ -752,7 +733,6 @@
                 </form>
             </div>
 
-            <!-- CURRENCY RATE CONTROL PANEL -->
             <div class="glass-panel p-6 rounded-3xl space-y-4">
                 <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                     <i data-lucide="dollar-sign" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
@@ -769,7 +749,6 @@
                 </form>
             </div>
 
-            <!-- DUAL ORDERS MANAGEMENT SECTIONS -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="glass-panel p-6 rounded-3xl space-y-4">
                     <h3 class="text-base font-bold text-white flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
@@ -786,7 +765,7 @@
                     <h3 class="text-base font-bold text-white flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
                         <span class="flex items-center gap-2">
                             <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                            In-Progress Orders (الطلبات قيد التنفيذ)
+                            In-Progress Orders
                         </span>
                         <span class="text-xs text-emerald-400 font-mono" id="activeOrdersCount">0 Active</span>
                     </h3>
@@ -795,11 +774,10 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Add Product with Multiple Images -->
                 <div class="glass-panel p-6 rounded-3xl space-y-4">
                     <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-zinc-900 pb-3 font-serif">
                         <i data-lucide="plus-circle" class="w-4 h-4" style="color: var(--aura-main, #dfb254);"></i>
-                        Add New Item with Multi-Images Gallery
+                        Add New Item
                     </h3>
                     <form onsubmit="addNewProduct(event)" class="space-y-3 text-xs">
                         <div>
@@ -824,8 +802,8 @@
                             <div>
                                 <label class="text-zinc-400 block mb-1">Stock Status</label>
                                 <select id="newStatus" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none">
-                                    <option value="available">Available (متوفر)</option>
-                                    <option value="sold">Sold Out (تم بيعها)</option>
+                                    <option value="available">Available</option>
+                                    <option value="sold">Sold Out</option>
                                 </select>
                             </div>
                             <div>
@@ -834,11 +812,11 @@
                             </div>
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">Detailed Description &amp; Specs</label>
+                            <label class="text-zinc-400 block mb-1">Description &amp; Specs</label>
                             <textarea id="newDesc" rows="3" required placeholder="Swiss automatic movement..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none"></textarea>
                         </div>
                         <div>
-                            <label class="text-zinc-400 block mb-1">Upload Multiple Images (Gallery)</label>
+                            <label class="text-zinc-400 block mb-1">Upload Images (Gallery)</label>
                             <input type="file" id="newImagesFiles" accept="image/*" multiple class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-2 py-1.5 text-zinc-300 text-xs file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-aura-gold cursor-pointer">
                         </div>
                         <button type="submit" class="w-full py-3 rounded-xl text-zinc-950 font-bold uppercase tracking-wider text-xs cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
@@ -847,7 +825,6 @@
                     </form>
                 </div>
 
-                <!-- Inventory Control -->
                 <div class="glass-panel p-6 rounded-3xl space-y-4">
                     <h3 class="text-base font-bold text-white flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
                         <span class="flex items-center gap-2">
@@ -880,45 +857,45 @@
         <div onclick="closeEditPromoModal()" class="absolute inset-0 bg-black/90 backdrop-blur-md"></div>
         <div class="relative w-full max-w-md glass-panel p-6 rounded-3xl shadow-2xl space-y-4 z-10" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
             <div class="flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
-                <h3 class="text-lg font-bold text-white">تعديل كود الخصم (Edit Promo Code)</h3>
+                <h3 class="text-lg font-bold text-white">Edit Promo Code</h3>
                 <button type="button" onclick="closeEditPromoModal()" class="text-zinc-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <form onsubmit="savePromoEdit(event)" class="space-y-3 text-xs">
                 <input type="hidden" id="editPromoId">
                 <div>
-                    <label class="text-zinc-400 block mb-1">كود الخصم (Code)</label>
+                    <label class="text-zinc-400 block mb-1">Promo Code</label>
                     <input type="text" id="editPromoCodeInput" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono uppercase focus:outline-none">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="text-zinc-400 block mb-1">نوع الخصم (Type)</label>
+                        <label class="text-zinc-400 block mb-1">Type</label>
                         <select id="editPromoTypeInput" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white focus:outline-none">
-                            <option value="percent">نسبة مئوية (%)</option>
-                            <option value="fixed">مبلغ ثابت ($ / ج.م)</option>
+                            <option value="percent">Percentage (%)</option>
+                            <option value="fixed">Fixed Amount ($ / EGP)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">قيمة الخصم (Value)</label>
+                        <label class="text-zinc-400 block mb-1">Discount Value</label>
                         <input type="number" step="0.1" id="editPromoValueInput" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="text-zinc-400 block mb-1">الاستخدام الإجمالي (Max Uses)</label>
-                        <input type="number" id="editPromoMaxUsesInput" placeholder="فارغ للجميع" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
+                        <label class="text-zinc-400 block mb-1">Max Total Uses</label>
+                        <input type="number" id="editPromoMaxUsesInput" placeholder="Optional" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                     </div>
                     <div>
-                        <label class="text-zinc-400 block mb-1">أقصى استخدام للعميل</label>
-                        <input type="number" id="editPromoMaxPerCustomerInput" placeholder="مثلاً: 1" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
+                        <label class="text-zinc-400 block mb-1">Max Uses Per Client</label>
+                        <input type="number" id="editPromoMaxPerCustomerInput" placeholder="Optional" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                     </div>
                 </div>
                 <div>
-                    <label class="text-zinc-400 block mb-1">تاريخ انتهاء الصلاحية</label>
+                    <label class="text-zinc-400 block mb-1">Expiry Date</label>
                     <input type="date" id="editPromoExpiryInput" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono focus:outline-none">
                 </div>
                 <div class="pt-3 flex gap-3">
-                    <button type="button" onclick="closeEditPromoModal()" class="w-1/2 py-2.5 bg-zinc-900 text-zinc-400 rounded-xl font-semibold cursor-pointer">إلغاء</button>
-                    <button type="submit" class="w-1/2 py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider cursor-pointer" style="background-color: var(--aura-main, #dfb254);">حفظ التعديلات</button>
+                    <button type="button" onclick="closeEditPromoModal()" class="w-1/2 py-2.5 bg-zinc-900 text-zinc-400 rounded-xl font-semibold cursor-pointer">Cancel</button>
+                    <button type="submit" class="w-1/2 py-2.5 rounded-xl text-zinc-950 font-bold uppercase tracking-wider cursor-pointer" style="background-color: var(--aura-main, #dfb254);">Save Changes</button>
                 </div>
             </form>
         </div>
@@ -959,10 +936,10 @@
                 <i data-lucide="alert-circle" class="w-6 h-6"></i>
             </div>
             <div>
-                <h3 class="text-lg font-serif font-bold text-white" id="errorModalTitle">بيانات ناقصة</h3>
-                <p class="text-xs text-zinc-300 mt-2 leading-relaxed" id="errorModalDesc">برجاء إدخال الاسم ورقم الهاتف، ورفع صورة إيصال الدفع لإتمام الطلب بنجاح.</p>
+                <h3 class="text-lg font-serif font-bold text-white" id="errorModalTitle">Incomplete Details</h3>
+                <p class="text-xs text-zinc-300 mt-2 leading-relaxed" id="errorModalDesc">Please enter your name, contact phone number, and upload payment receipt screenshot.</p>
             </div>
-            <button type="button" onclick="closeErrorModal()" class="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer">حسناً، فهمت</button>
+            <button type="button" onclick="closeErrorModal()" class="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer">Understood</button>
         </div>
     </div>
 
@@ -974,13 +951,13 @@
                 <i data-lucide="check-circle-2" class="w-8 h-8" style="color: var(--aura-main, #dfb254);"></i>
             </div>
             <div>
-                <h3 class="text-xl font-serif font-bold text-white">تم إرسال طلبك بنجاح!</h3>
+                <h3 class="text-xl font-serif font-bold text-white">Order Submitted Successfully!</h3>
                 <p class="text-xs text-zinc-300 mt-2 leading-relaxed">
-                    تم إرسال طلبك إلى إدارة المتجر بنجاح. سيتم مراجعة إيصال الدفع وتأكيد الأوردر، وسوف تظهر لك تفاصيل وموعد التوصيل هنا فور قبول الإدارة له!
+                    Your order and receipt have been received. Our team will verify your payment and provide live dispatch tracking updates in the chat window.
                 </p>
             </div>
             <div id="successOrderIdBadge" class="font-mono text-xs py-2 px-4 rounded-xl bg-zinc-900 text-white border border-zinc-800"></div>
-            <button type="button" onclick="closeSuccessOrderModal()" class="w-full py-3 text-zinc-950 font-bold uppercase tracking-wider text-xs rounded-xl cursor-pointer shadow-lg" style="background-color: var(--aura-main, #dfb254);">متابعة التتبع والرسائل</button>
+            <button type="button" onclick="closeSuccessOrderModal()" class="w-full py-3 text-zinc-950 font-bold uppercase tracking-wider text-xs rounded-xl cursor-pointer shadow-lg" style="background-color: var(--aura-main, #dfb254);">Track Order &amp; Open Chat</button>
         </div>
     </div>
 
@@ -990,13 +967,13 @@
         <div class="relative w-full max-w-md glass-panel p-6 rounded-3xl shadow-2xl space-y-4 z-10" style="border-color: var(--aura-border, rgba(223, 178, 84, 0.4));">
             <h3 class="text-lg font-serif font-bold text-white flex items-center gap-2">
                 <i data-lucide="clock" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i>
-                حدد موعد وتفاصيل التوصيل (Delivery ETA)
+                Set Delivery ETA
             </h3>
-            <p class="text-xs text-zinc-400">اكتب تفاصيل وموعد التوصيل للعميل ليظهر له في خانة التتبع والرسائل:</p>
+            <p class="text-xs text-zinc-400">Specify delivery details or estimated arrival time for the client:</p>
             <input type="text" id="etaInputText" value="Insured Geneva Express Delivery • Expected in 48h" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2.5 text-white text-xs focus:outline-none font-mono">
             <div class="flex gap-3 pt-2">
-                <button type="button" onclick="closeEtaModal()" class="w-1/2 py-2.5 bg-zinc-900 text-zinc-400 rounded-xl text-xs font-semibold cursor-pointer">إلغاء</button>
-                <button type="button" onclick="confirmApproveOrder()" class="w-1/2 py-2.5 rounded-xl text-zinc-950 text-xs font-bold uppercase tracking-wider cursor-pointer" style="background-color: var(--aura-main, #dfb254);">تأكيد وقبول الأوردر</button>
+                <button type="button" onclick="closeEtaModal()" class="w-1/2 py-2.5 bg-zinc-900 text-zinc-400 rounded-xl text-xs font-semibold cursor-pointer">Cancel</button>
+                <button type="button" onclick="confirmApproveOrder()" class="w-1/2 py-2.5 rounded-xl text-zinc-950 text-xs font-bold uppercase tracking-wider cursor-pointer" style="background-color: var(--aura-main, #dfb254);">Approve &amp; Confirm</button>
             </div>
         </div>
     </div>
@@ -1008,7 +985,7 @@
             <div class="flex items-center justify-between border-b border-zinc-900 pb-3 font-serif">
                 <h3 class="text-lg font-bold text-white flex items-center gap-2">
                     <i data-lucide="edit-3" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i>
-                    Edit Item Parameters &amp; Gallery
+                    Edit Item Parameters
                 </h3>
                 <button type="button" onclick="closeEditModal()" class="text-zinc-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
@@ -1036,8 +1013,8 @@
                     <div>
                         <label class="text-zinc-400 block mb-1">Stock Status</label>
                         <select id="editStatus" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2.5 text-white focus:outline-none text-sm">
-                            <option value="available">Available (متوفر)</option>
-                            <option value="sold">Sold Out (تم بيعها)</option>
+                            <option value="available">Available</option>
+                            <option value="sold">Sold Out</option>
                         </select>
                     </div>
                     <div>
@@ -1046,11 +1023,11 @@
                     </div>
                 </div>
                 <div>
-                    <label class="text-zinc-400 block mb-1">Detailed Description &amp; Specs</label>
+                    <label class="text-zinc-400 block mb-1">Description &amp; Specs</label>
                     <textarea id="editDesc" rows="3" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2.5 text-white focus:outline-none text-xs"></textarea>
                 </div>
                 <div>
-                    <label class="text-zinc-400 block mb-1">Add/Replace Gallery Images</label>
+                    <label class="text-zinc-400 block mb-1">Replace Gallery Images</label>
                     <input type="file" id="editImagesFiles" accept="image/*" multiple class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-2 py-2 text-zinc-300 text-xs file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-aura-gold cursor-pointer">
                 </div>
                 <div class="pt-3 flex gap-3">
@@ -1138,7 +1115,7 @@
                 valuation: "القيمة الإجمالية:",
                 sendBtn: "إرسال",
                 langLabel: "AR / EN",
-                csTitle: "الإعدادات والنشاط (Settings and activity)",
+                csTitle: "الإعدادات والنشاط",
                 csSub: "الدعم الفني ومجتمع النخبة",
                 csCancelTitle: "طلب إلغاء الأوردر",
                 csCancelDesc: "اختر الأوردر الخاص بك وحدد سبب الإلغاء أو اختر من القائمة الجاهزة أدناه:",
@@ -1172,16 +1149,15 @@
             submitBtn: "SUBMIT PAYMENT & ORDER"
         };
 
-        // CUSTOMER REVIEWS CUSTOMIZABLE TEXTS
         let reviewTexts = JSON.parse(localStorage.getItem('aura_review_texts')) || {
-            modalTitle: "آراء وتقييمات العملاء (Testimonials)",
-            modalSub: "ما يقوله هواة التجميع والنخبة عن ساعات AURA",
-            formTitle: "أضف تقييمك ورأيك في المتجر والساعات",
-            nameLabel: "اسمك الكريم (Your Name)",
-            ratingLabel: "التقييم بالنجوم (Rating)",
-            textLabel: "رأيك أو تجربتك مع الساعة (Your Review)",
-            imgLabel: "صورة المنتج أو سكرين شوت من الشات (اختياري)",
-            submitBtn: "نشر التقييم (Submit Review)"
+            modalTitle: "Customer Reviews",
+            modalSub: "Feedback from collectors & clients",
+            formTitle: "Write a Review",
+            nameLabel: "Your Name",
+            ratingLabel: "Rating",
+            textLabel: "Your Review",
+            imgLabel: "Photo (Optional)",
+            submitBtn: "Submit Review"
         };
 
         let themeColors = JSON.parse(localStorage.getItem('aura_theme_colors')) || {
@@ -1308,556 +1284,558 @@
             }
         });
 
-        // CUSTOMER REVIEWS DATA STORE (WITH IMAGE SUPPORT)
         let customerReviews = JSON.parse(localStorage.getItem('aura_customer_reviews')) || [
-            { id: 1, author: 'محمود الشناوي', rating: 5, text: 'ساعة Geneva 18k تحفة فنية حقيقية، والدفع عبر إنستا باي كان في ثوانٍ!', imageUrl: '', date: '2026-10-24' },
-            { id: 2, author: 'كريم البهي', rating: 5, text: 'خدمة العملاء محترمة جداً والشات المباشر بيجاوبك في أسرع وقت.', imageUrl: '', date: '2026-10-25' }
+            { id: 1, author: 'Mahmoud El-Shennawy', rating: 5, text: 'The Geneva 18k Gold timepiece is exceptional. Instant verification and prompt delivery.', imageUrl: '', date: '2026-10-24' },
+            { id: 2, author: 'Kareem El-Bahy', rating: 5, text: 'Superb customer support and smooth live order dispatch chat.', imageUrl: '', date: '2026-10-25' }
         ];
 
         let promoCodes = JSON.parse(localStorage.getItem('aura_promo_codes')) || [
             { id: 1, code: 'AURA20', type: 'percent', value: 20, maxUses: null, maxUsesPerCustomer: null, usedCount: 0, expiryDate: '', userUsages: {} },
-            { id: 2, code: 'VIP50', type: 'fixed', value: 50, maxUses: 1, maxUsesPerCustomer: 1, usedCount: 0, expiryDate: '', userUsages: {} }
+            { id: 2, code: 'VIP50', type: 'fixed', value: 50, maxUses: 10, maxUsesPerCustomer: 1, usedCount: 0, expiryDate: '', userUsages: {} }
         ];
+
+        let orders = JSON.parse(localStorage.getItem('aura_orders')) || [];
+        let activeCategory = 'all';
+        let cart = [];
+        let selectedProductForDetail = null;
+        let selectedDetailImageIndex = 0;
+        let selectedOrderForApproval = null;
+        let activeChatOrderId = null;
+        let activeAdminChatOrderId = null;
         let appliedPromo = null;
 
-        let cart = [];
-        let orders = JSON.parse(localStorage.getItem('aura_orders')) || [];
-        let activeCategoryFilter = 'all';
-        let selectedOrderIndexForApproval = null;
-        let currentActiveCustomerOrderId = null;
-        let currentAdminChatOrderIndex = null;
-
-        function saveData() {
-            localStorage.setItem('aura_cats', JSON.stringify(catNames));
-            localStorage.setItem('aura_hero', JSON.stringify(heroData));
+        function saveState() {
             localStorage.setItem('aura_products', JSON.stringify(products));
             localStorage.setItem('aura_orders', JSON.stringify(orders));
-            localStorage.setItem('aura_promo_codes', JSON.stringify(promoCodes));
-            localStorage.setItem('aura_customer_reviews', JSON.stringify(customerReviews));
-            localStorage.setItem('aura_review_texts', JSON.stringify(reviewTexts));
-            localStorage.setItem('aura_currency', currentCurrency);
-            localStorage.setItem('aura_egp_rate', egpExchangeRate);
-            localStorage.setItem('aura_theme', isDarkMode ? 'dark' : 'light');
             localStorage.setItem('aura_brand', JSON.stringify(brandData));
             localStorage.setItem('aura_checkout_texts', JSON.stringify(checkoutTexts));
-            localStorage.setItem('aura_lang', currentLang);
-        }
-
-        // SAVE REVIEWS TEXTS FROM ADMIN
-        function saveReviewsTexts(e) {
-            e.preventDefault();
-            reviewTexts.modalTitle = document.getElementById('editRevModalTitle').value;
-            reviewTexts.modalSub = document.getElementById('editRevModalSub').value;
-            reviewTexts.formTitle = document.getElementById('editRevFormTitle').value;
-            reviewTexts.submitBtn = document.getElementById('editRevSubmitBtn').value;
-
-            saveData();
-            updateUI();
-            showToast('تم تحديث نصوص قسم آراء العملاء بنجاح!');
-        }
-
-        // ADMIN DELETE CUSTOMER REVIEW
-        function deleteCustomerReview(id) {
-            customerReviews = customerReviews.filter(r => r.id !== id);
-            saveData();
-            renderCustomerReviewsList();
-            renderAdminReviewsTable();
-            showToast('تم حذف التقييم بنجاح');
-        }
-
-        function renderAdminReviewsTable() {
-            const tbody = document.getElementById('adminReviewsTable');
-            if(!tbody) return;
-            tbody.innerHTML = '';
-            document.getElementById('adminReviewsCount').textContent = `${customerReviews.length} Reviews`;
-
-            if(customerReviews.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="p-3 text-center text-zinc-500">لا توجد تقييمات مضافة.</td></tr>`;
-                return;
-            }
-
-            customerReviews.forEach(r => {
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-zinc-900/50 transition-colors';
-                const stars = '★'.repeat(r.rating);
-                const thumb = r.imageUrl ? `<img src="${r.imageUrl}" class="w-8 h-8 rounded object-cover border border-zinc-800">` : `<span class="text-zinc-600 text-[10px]">No Image</span>`;
-                tr.innerHTML = `
-                    <td class="p-2.5">${thumb}</td>
-                    <td class="p-2.5 text-white font-bold">${r.author}</td>
-                    <td class="p-2.5 text-amber-400 font-mono">${stars}</td>
-                    <td class="p-2.5 text-zinc-300 truncate max-w-xs">${r.text}</td>
-                    <td class="p-2.5 text-right">
-                        <button type="button" onclick="deleteCustomerReview(${r.id})" class="px-2.5 py-1 rounded bg-rose-950/40 hover:bg-rose-900 text-rose-300 transition-colors cursor-pointer">Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        // CUSTOMER REVIEWS FUNCTIONS
-        function openCustomerReviewsModal() {
-            closeCustomerServiceModal();
-            renderCustomerReviewsList();
-            document.getElementById('customerReviewsModal').classList.remove('hidden');
-        }
-
-        function closeCustomerReviewsModal() {
-            document.getElementById('customerReviewsModal').classList.add('hidden');
-        }
-
-        function submitCustomerReview(e) {
-            e.preventDefault();
-            const author = document.getElementById('reviewAuthorName').value.trim();
-            const rating = parseInt(document.getElementById('reviewAuthorRating').value);
-            const text = document.getElementById('reviewAuthorText').value.trim();
-            const fileInput = document.getElementById('reviewImageFile');
-
-            if(!author || !text) return;
-
-            if(fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    pushReview(evt.target.result);
-                };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                pushReview('');
-            }
-
-            function pushReview(imgUrl) {
-                const newReview = {
-                    id: Date.now(),
-                    author,
-                    rating,
-                    text,
-                    imageUrl: imgUrl,
-                    date: new Date().toISOString().split('T')[0]
-                };
-
-                customerReviews.unshift(newReview);
-                saveData();
-                renderCustomerReviewsList();
-                renderAdminReviewsTable();
-
-                document.getElementById('reviewAuthorName').value = '';
-                document.getElementById('reviewAuthorText').value = '';
-                fileInput.value = '';
-                showToast('شكراً لك! تم نشر تقييمك بنجاح.');
-            }
-        }
-
-        function renderCustomerReviewsList() {
-            const list = document.getElementById('customerReviewsList');
-            if(!list) return;
-            list.innerHTML = '';
-            document.getElementById('reviewsCountBadge').textContent = customerReviews.length;
-
-            if(customerReviews.length === 0) {
-                list.innerHTML = `<div class="text-zinc-500 text-center py-6 text-xs">لا توجد تقييمات مضافة حتى الآن. كن أول المقيّمين!</div>`;
-                return;
-            }
-
-            customerReviews.forEach(r => {
-                const starsHTML = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-                let imgHTML = '';
-                if(r.imageUrl) {
-                    imgHTML = `
-                        <div class="mt-2 space-y-1">
-                            <span class="text-[10px] text-aura-gold font-mono block">📷 صورة مرفقة من العميل (منتج أو شات):</span>
-                            <div class="w-full h-44 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800">
-                                <img src="${r.imageUrl}" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    `;
-                }
-
-                const div = document.createElement('div');
-                div.className = 'bg-zinc-950/70 p-4 rounded-2xl border border-zinc-800 space-y-2 text-xs';
-                div.innerHTML = `
-                    <div class="flex items-center justify-between">
-                        <strong class="text-white font-serif">${r.author}</strong>
-                        <span class="text-amber-400 font-mono tracking-wider">${starsHTML}</span>
-                    </div>
-                    <p class="text-zinc-300 leading-relaxed">${r.text}</p>
-                    ${imgHTML}
-                    <div class="text-[9px] text-zinc-500 font-mono text-right">${r.date}</div>
-                `;
-                list.appendChild(div);
-            });
-        }
-
-        // PROMO CODES ADMIN FUNCTIONS WITH PER-CUSTOMER LIMIT
-        function addNewPromoCode(e) {
-            e.preventDefault();
-            const code = document.getElementById('newPromoCode').value.trim().toUpperCase();
-            const type = document.getElementById('newPromoType').value;
-            const value = parseFloat(document.getElementById('newPromoValue').value);
-            const maxUsesInput = document.getElementById('newPromoMaxUses').value.trim();
-            const maxUses = maxUsesInput ? parseInt(maxUsesInput) : null;
-            
-            const maxPerCustomerInput = document.getElementById('newPromoMaxPerCustomer').value.trim();
-            const maxUsesPerCustomer = maxPerCustomerInput ? parseInt(maxPerCustomerInput) : null;
-
-            const expiryDate = document.getElementById('newPromoExpiry').value;
-
-            if(!code || isNaN(value)) return;
-
-            if(promoCodes.some(p => p.code === code)) {
-                showToast('Promo code already exists!');
-                return;
-            }
-
-            promoCodes.push({ id: Date.now(), code, type, value, maxUses, maxUsesPerCustomer, usedCount: 0, expiryDate, userUsages: {} });
-            saveData();
-            renderAdminPromoTable();
-            
-            document.getElementById('newPromoCode').value = '';
-            document.getElementById('newPromoValue').value = '';
-            document.getElementById('newPromoMaxUses').value = '';
-            document.getElementById('newPromoMaxPerCustomer').value = '';
-            document.getElementById('newPromoExpiry').value = '';
-            showToast(`Promo code "${code}" added successfully!`);
-        }
-
-        function deletePromoCode(id) {
-            promoCodes = promoCodes.filter(p => p.id !== id);
-            saveData();
-            renderAdminPromoTable();
-            showToast('Promo code deleted');
-        }
-
-        function openEditPromoModal(id) {
-            const p = promoCodes.find(x => x.id === id);
-            if (!p) return;
-            document.getElementById('editPromoId').value = p.id;
-            document.getElementById('editPromoCodeInput').value = p.code;
-            document.getElementById('editPromoTypeInput').value = p.type;
-            document.getElementById('editPromoValueInput').value = p.value;
-            document.getElementById('editPromoMaxUsesInput').value = p.maxUses !== null ? p.maxUses : '';
-            document.getElementById('editPromoMaxPerCustomerInput').value = p.maxUsesPerCustomer !== null ? p.maxUsesPerCustomer : '';
-            document.getElementById('editPromoExpiryInput').value = p.expiryDate || '';
-            document.getElementById('editPromoModal').classList.remove('hidden');
-        }
-
-        function closeEditPromoModal() {
-            document.getElementById('editPromoModal').classList.add('hidden');
-        }
-
-        function savePromoEdit(e) {
-            e.preventDefault();
-            const id = parseInt(document.getElementById('editPromoId').value);
-            const p = promoCodes.find(x => x.id === id);
-            if (!p) return;
-
-            p.code = document.getElementById('editPromoCodeInput').value.trim().toUpperCase();
-            p.type = document.getElementById('editPromoTypeInput').value;
-            p.value = parseFloat(document.getElementById('editPromoValueInput').value);
-            
-            const maxUsesInput = document.getElementById('editPromoMaxUsesInput').value.trim();
-            p.maxUses = maxUsesInput ? parseInt(maxUsesInput) : null;
-
-            const maxPerCustomerInput = document.getElementById('editPromoMaxPerCustomerInput').value.trim();
-            p.maxUsesPerCustomer = maxPerCustomerInput ? parseInt(maxPerCustomerInput) : null;
-
-            p.expiryDate = document.getElementById('editPromoExpiryInput').value;
-
-            if(!p.userUsages) p.userUsages = {};
-
-            saveData();
-            renderAdminPromoTable();
-            closeEditPromoModal();
-            showToast(`Promo code "${p.code}" updated successfully!`);
-        }
-
-        function renderAdminPromoTable() {
-            const tbody = document.getElementById('adminPromoTable');
-            if(!tbody) return;
-            tbody.innerHTML = '';
-            document.getElementById('adminPromoCount').textContent = `${promoCodes.length} Codes Active`;
-
-            if(promoCodes.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="p-3 text-center text-zinc-500">No promo codes created yet.</td></tr>`;
-                return;
-            }
-
-            promoCodes.forEach(p => {
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-zinc-900/50 transition-colors';
-                const valStr = p.type === 'percent' ? `${p.value}%` : `$${p.value}`;
-                const usesStr = p.maxUses !== null ? `${p.usedCount || 0} / ${p.maxUses}` : `${p.usedCount || 0} / ∞`;
-                const perCustStr = p.maxUsesPerCustomer !== null ? `${p.maxUsesPerCustomer} مرات لكل عميل` : 'بلا حدود للعميل';
-                const expiryStr = p.expiryDate ? p.expiryDate : 'دائم';
-                
-                tr.innerHTML = `
-                    <td class="p-2.5 text-white font-bold">${p.code}</td>
-                    <td class="p-2.5 uppercase text-[10px] text-aura-gold">${p.type} (${valStr})</td>
-                    <td class="p-2.5 text-zinc-300 font-mono">${usesStr}</td>
-                    <td class="p-2.5 text-emerald-400 font-mono text-[10px]">${perCustStr}</td>
-                    <td class="p-2.5 text-zinc-400 text-[10px]">${expiryStr}</td>
-                    <td class="p-2.5 text-right space-x-1">
-                        <button type="button" onclick="openEditPromoModal(${p.id})" class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-aura-gold hover:text-zinc-950 text-zinc-300 transition-colors cursor-pointer">Edit</button>
-                        <button type="button" onclick="deletePromoCode(${p.id})" class="px-2.5 py-1 rounded bg-rose-950/40 hover:bg-rose-900 text-rose-300 transition-colors cursor-pointer">Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function applyPromoCode() {
-            const inputCode = document.getElementById('cartPromoInput').value.trim().toUpperCase();
-            const customerNameInput = document.getElementById('customerName').value.trim();
-            const feedback = document.getElementById('promoFeedback');
-
-            if(!inputCode) {
-                appliedPromo = null;
-                feedback.textContent = '';
-                updateCartUI();
-                return;
-            }
-
-            const found = promoCodes.find(p => p.code === inputCode);
-            if(!found) {
-                appliedPromo = null;
-                feedback.className = 'text-[11px] font-mono text-rose-400';
-                feedback.textContent = `✗ كود الخصم غير موجود.`;
-                updateCartUI();
-                return;
-            }
-
-            if(found.expiryDate) {
-                const today = new Date().toISOString().split('T')[0];
-                if(today > found.expiryDate) {
-                    appliedPromo = null;
-                    feedback.className = 'text-[11px] font-mono text-rose-400';
-                    feedback.textContent = `✗ عذراً، انتهت صلاحية هذا الكود.`;
-                    updateCartUI();
-                    return;
-                }
-            }
-
-            if(found.maxUses !== null && (found.usedCount || 0) >= found.maxUses) {
-                appliedPromo = null;
-                feedback.className = 'text-[11px] font-mono text-rose-400';
-                feedback.textContent = `✗ عذراً، تم استنفاد الحد الأقصى الإجمالي لاستخدام هذا الكود.`;
-                updateCartUI();
-                return;
-            }
-
-            if(customerNameInput && found.maxUsesPerCustomer !== null) {
-                if(!found.userUsages) found.userUsages = {};
-                const userUsedCount = found.userUsages[customerNameInput] || 0;
-                if(userUsedCount >= found.maxUsesPerCustomer) {
-                    appliedPromo = null;
-                    feedback.className = 'text-[11px] font-mono text-rose-400';
-                    feedback.textContent = `✗ عذراً (${customerNameInput})، لقد تجاوزت الحد المسموح لك لاستخدام هذا الكود (${found.maxUsesPerCustomer} مرة).`;
-                    updateCartUI();
-                    return;
-                }
-            }
-
-            appliedPromo = found;
-            feedback.className = 'text-[11px] font-mono text-emerald-400';
-            feedback.textContent = `✓ تم تطبيق كود الخصم "${found.code}" بنجاح!`;
-            showToast(`Promo applied: ${found.code}`);
-            updateCartUI();
-        }
-
-        function saveBrandSettings(e) {
-            e.preventDefault();
-            brandData.title = document.getElementById('editBrandTitle').value;
-            brandData.subtitle = document.getElementById('editBrandSubtitle').value;
-
-            const fileInput = document.getElementById('brandLogoFile');
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    brandData.logoUrl = evt.target.result;
-                    finishBrandSave();
-                };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                finishBrandSave();
-            }
-
-            function finishBrandSave() {
-                saveData();
-                updateUI();
-                showToast('Brand & Logo Updated Successfully!');
-            }
-        }
-
-        function saveCheckoutCartTexts(e) {
-            e.preventDefault();
-            checkoutTexts.cartTitle = document.getElementById('editCartTitle').value;
-            checkoutTexts.instTitle = document.getElementById('editCartInstTitle').value;
-            checkoutTexts.instDesc = document.getElementById('editCartInstDesc').value;
-
-            saveData();
-            updateUI();
-            showToast('Checkout Cart Texts Updated Successfully!');
+            localStorage.setItem('aura_review_texts', JSON.stringify(reviewTexts));
+            localStorage.setItem('aura_customer_reviews', JSON.stringify(customerReviews));
+            localStorage.setItem('aura_promo_codes', JSON.stringify(promoCodes));
+            localStorage.setItem('aura_egp_rate', egpExchangeRate.toString());
         }
 
         function formatPrice(usdPrice) {
             if (currentCurrency === 'EGP') {
                 const egpVal = usdPrice * egpExchangeRate;
-                return `${egpVal.toLocaleString()} ج.م`;
+                return `${egpVal.toLocaleString('en-US', {maximumFractionDigits: 0})} EGP`;
             }
-            return `$${usdPrice.toLocaleString()}`;
+            return `$${usdPrice.toLocaleString('en-US', {minimumFractionDigits: 0})}`;
         }
 
         function toggleCurrency() {
             currentCurrency = currentCurrency === 'USD' ? 'EGP' : 'USD';
-            saveData();
-            updateCurrencyUI();
-            renderProducts(activeCategoryFilter);
-            updateCartUI();
-            showToast(`Currency switched to ${currentCurrency}`);
-        }
-
-        function updateCurrencyUI() {
-            const btnLabel = document.getElementById('currencyBtnLabel');
-            if (currentCurrency === 'EGP') {
-                btnLabel.textContent = 'EGP (ج.م)';
-            } else {
-                btnLabel.textContent = 'USD ($)';
-            }
+            localStorage.setItem('aura_currency', currentCurrency);
+            document.getElementById('currencyBtnLabel').innerText = currentCurrency === 'USD' ? 'USD ($)' : 'EGP (ج.م)';
+            renderCatalog();
+            renderCart();
+            if(selectedProductForDetail) openProductDetail(selectedProductForDetail.id);
+            showToast(`Currency changed to ${currentCurrency}`);
         }
 
         function toggleTheme() {
             isDarkMode = !isDarkMode;
-            saveData();
+            localStorage.setItem('aura_theme', isDarkMode ? 'dark' : 'light');
             applyTheme();
-            showToast(`Switched to ${isDarkMode ? 'Dark' : 'Light'} Mode`);
         }
 
         function applyTheme() {
-            const html = document.documentElement;
-            const darkIcon = document.getElementById('themeIconDark');
-            const lightIcon = document.getElementById('themeIconLight');
-
             if (isDarkMode) {
-                html.classList.add('dark');
-                darkIcon.classList.add('hidden');
-                lightIcon.classList.remove('hidden');
+                document.documentElement.classList.add('dark');
+                document.getElementById('themeIconDark').classList.add('hidden');
+                document.getElementById('themeIconLight').classList.remove('hidden');
             } else {
-                html.classList.remove('dark');
-                darkIcon.classList.add('hidden');
-                lightIcon.classList.remove('hidden');
-            }
-        }
-
-        function saveExchangeRate(e) {
-            e.preventDefault();
-            const rate = parseFloat(document.getElementById('editEgpRate').value);
-            if (rate > 0) {
-                egpExchangeRate = rate;
-                saveData();
-                renderProducts(activeCategoryFilter);
-                updateCartUI();
-                showToast(`Exchange rate updated: 1 USD = ${egpExchangeRate} EGP`);
+                document.documentElement.classList.remove('dark');
+                document.getElementById('themeIconDark').classList.remove('hidden');
+                document.getElementById('themeIconLight').classList.add('hidden');
             }
         }
 
         function updateUI() {
-            const t = i18n[currentLang];
-
-            document.getElementById('brandTitleView').textContent = brandData.title;
-            document.getElementById('brandSubtitleView').textContent = brandData.subtitle;
-            document.getElementById('pageTitle').textContent = `${brandData.title} | ${brandData.subtitle}`;
+            const lang = i18n[currentLang];
+            document.getElementById('announcementText').querySelector('span:last-child').innerText = lang.announcement;
+            document.getElementById('navCatAll').innerText = lang.navAll;
+            document.getElementById('navCatChrono').innerText = lang.navChrono;
+            document.getElementById('navCatTourb').innerText = lang.navTourb;
+            document.getElementById('navCatLimit').innerText = lang.navLimit;
+            document.getElementById('heroSubtitleView').innerText = lang.heroSub;
+            document.getElementById('heroTitleView').innerText = lang.heroTitle;
+            document.getElementById('heroDescView').innerText = lang.heroDesc;
+            document.getElementById('heroBtnView').innerText = lang.heroBtn;
+            document.getElementById('catalogMainTitle').innerText = lang.catalogTitle;
+            document.getElementById('catalogMainSub').innerText = lang.catalogSub;
+            document.getElementById('detailVaultCertified').innerText = lang.detailCert;
+            document.getElementById('detailSpecsTitle').innerText = lang.detailSpecs;
+            document.getElementById('detailBtnText').innerText = lang.detailBtn;
+            document.getElementById('trackingBannerTitle').innerText = lang.trackTitle;
+            document.getElementById('viewDetailsChatBtn').innerText = lang.trackBtn;
+            document.getElementById('custChatModalTitle').innerText = lang.chatTitle;
+            document.getElementById('sendChatBtnText').innerText = lang.sendBtn;
+            document.getElementById('langBtnLabel').innerText = lang.langLabel;
             
-            const logoInner = document.getElementById('brandLogoInner');
-            if (brandData.logoUrl) {
-                logoInner.innerHTML = `<img src="${brandData.logoUrl}" class="w-full h-full object-cover rounded-[7px]">`;
+            document.getElementById('csModalTitle').innerText = lang.csTitle;
+            document.getElementById('csModalSub').innerText = lang.csSub;
+            document.getElementById('csCancelSectionTitle').innerText = lang.csCancelTitle;
+            document.getElementById('csCancelSectionDesc').innerText = lang.csCancelDesc;
+            document.getElementById('csSelectOrderLabel').innerText = lang.csSelectOrder;
+            document.getElementById('csReasonSelectLabel').innerText = lang.csReasonSelect;
+            document.getElementById('csCustomReasonLabel').innerText = lang.csCustomReason;
+
+            document.getElementById('brandTitleView').innerText = brandData.title;
+            document.getElementById('brandSubtitleView').innerText = brandData.subtitle;
+            if(brandData.logoUrl) {
+                document.getElementById('brandLogoInner').innerHTML = `<img src="${brandData.logoUrl}" class="w-full h-full object-cover rounded-[7px]">`;
             } else {
-                logoInner.innerHTML = `<i data-lucide="watch" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i>`;
+                document.getElementById('brandLogoInner').innerHTML = `<i data-lucide="watch" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i>`;
+                lucide.createIcons();
             }
 
-            document.getElementById('announcementText').querySelector('span:last-child').textContent = t.announcement;
-            document.getElementById('navCatAll').textContent = t.navAll;
-            document.getElementById('navCatChrono').textContent = t.navChrono;
-            document.getElementById('navCatTourb').textContent = t.navTourb;
-            document.getElementById('navCatLimit').textContent = t.navLimit;
-            document.getElementById('langBtnLabel').textContent = t.langLabel;
-
-            document.getElementById('heroSubtitleView').textContent = heroData.subtitle;
-            document.getElementById('heroTitleView').textContent = heroData.title;
-            document.getElementById('heroDescView').textContent = heroData.desc;
-            document.getElementById('heroBtnView').textContent = heroData.btnText;
-
-            document.getElementById('catalogMainTitle').textContent = t.catalogTitle;
-            document.getElementById('catalogMainSub').textContent = t.catalogSub;
-
-            document.getElementById('detailVaultCertified').textContent = t.detailCert;
-            document.getElementById('detailSpecsTitle').textContent = t.detailSpecs;
-            document.getElementById('detailBtnText').textContent = t.detailBtn;
-
-            document.getElementById('trackingBannerTitle').textContent = t.trackTitle;
-            document.getElementById('viewDetailsChatBtn').textContent = t.trackBtn;
-            document.getElementById('custChatModalTitle').textContent = t.chatTitle;
-            document.getElementById('custChatValuationLabel').innerHTML = `${t.valuation} <strong id="custChatTotalVal" style="color: var(--aura-main, #dfb254);">$0</strong>`;
-            document.getElementById('sendChatBtnText').textContent = t.sendBtn;
-
-            document.getElementById('csModalTitle').textContent = t.csTitle;
-            document.getElementById('csModalSub').textContent = t.csSub;
-            document.getElementById('csCancelSectionTitle').textContent = t.csCancelTitle;
-            document.getElementById('csCancelSectionDesc').textContent = t.csCancelDesc;
-            document.getElementById('csSelectOrderLabel').textContent = t.csSelectOrder;
-            document.getElementById('csReasonSelectLabel').textContent = t.csReasonSelect;
-            document.getElementById('csCustomReasonLabel').textContent = t.csCustomReason;
-            document.querySelector('#customerServiceModal button.bg-rose-600').textContent = t.csSubmitCancel;
-
-            // SYNC REVIEWS DYNAMIC TEXTS
-            document.getElementById('revModalTitleView').textContent = reviewTexts.modalTitle;
-            document.getElementById('revModalSubView').textContent = reviewTexts.modalSub;
-            document.getElementById('revFormTitleView').textContent = reviewTexts.formTitle;
-            document.getElementById('revNameLabelView').textContent = reviewTexts.nameLabel;
-            document.getElementById('revRatingLabelView').textContent = reviewTexts.ratingLabel;
-            document.getElementById('revTextLabelView').textContent = reviewTexts.textLabel;
-            document.getElementById('revImgLabelView').textContent = reviewTexts.imgLabel;
-            document.getElementById('revSubmitBtnView').textContent = reviewTexts.submitBtn;
-
-            // SYNC ADMIN INPUTS
-            document.getElementById('editRevModalTitle').value = reviewTexts.modalTitle;
-            document.getElementById('editRevModalSub').value = reviewTexts.modalSub;
-            document.getElementById('editRevFormTitle').value = reviewTexts.formTitle;
-            document.getElementById('editRevSubmitBtn').value = reviewTexts.submitBtn;
-
             document.getElementById('cartTitleView').innerHTML = `<i data-lucide="shopping-bag" class="w-5 h-5" style="color: var(--aura-main, #dfb254);"></i> ${checkoutTexts.cartTitle}`;
-            document.getElementById('cartInstTitleView').textContent = checkoutTexts.instTitle;
-            document.getElementById('cartInstDescView').textContent = checkoutTexts.instDesc;
-            document.getElementById('cartTotalValView').textContent = checkoutTexts.totalVal;
-            document.getElementById('cartSubmitBtnView').textContent = checkoutTexts.submitBtn;
+            document.getElementById('cartInstTitleView').innerText = checkoutTexts.instTitle;
+            document.getElementById('cartInstDescView').innerText = checkoutTexts.instDesc;
+            document.getElementById('cartNameLabelView').innerHTML = `${checkoutTexts.nameLabel} <span class="text-rose-400">*</span>`;
+            document.getElementById('cartReceiptLabelView').innerHTML = `${checkoutTexts.receiptLabel} <span class="text-rose-400">*</span>`;
+            document.getElementById('cartTotalValView').innerText = checkoutTexts.totalVal;
+            document.getElementById('cartSubmitBtnView').innerText = checkoutTexts.submitBtn;
 
-            document.getElementById('editBrandTitle').value = brandData.title;
-            document.getElementById('editBrandSubtitle').value = brandData.subtitle;
-            document.getElementById('editEgpRate').value = egpExchangeRate;
+            document.getElementById('revModalTitleView').innerText = reviewTexts.modalTitle;
+            document.getElementById('revModalSubView').innerText = reviewTexts.modalSub;
+            document.getElementById('revFormTitleView').innerText = reviewTexts.formTitle;
+            document.getElementById('revNameLabelView').innerText = reviewTexts.nameLabel;
+            document.getElementById('revRatingLabelView').innerText = reviewTexts.ratingLabel;
+            document.getElementById('revTextLabelView').innerText = reviewTexts.textLabel;
+            document.getElementById('revImgLabelView').innerText = reviewTexts.imgLabel;
+            document.getElementById('revSubmitBtnView').innerText = reviewTexts.submitBtn;
 
-            document.getElementById('editCartTitle').value = checkoutTexts.cartTitle;
-            document.getElementById('editCartInstTitle').value = checkoutTexts.instTitle;
-            document.getElementById('editCartInstDesc').value = checkoutTexts.instDesc;
+            renderCatalog();
+            renderCustomerReviewsList();
+            renderCustomerTrackingBanner();
+        }
 
-            updateFloatingBadge();
-            updateCurrencyUI();
-            applyTheme();
-            applyThemeColors();
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('text-white', 'font-bold'));
+            if(cat === 'all') document.getElementById('navCatAll').classList.add('text-white', 'font-bold');
+            if(cat === 'chronograph') document.getElementById('navCatChrono').classList.add('text-white', 'font-bold');
+            if(cat === 'tourbillon') document.getElementById('navCatTourb').classList.add('text-white', 'font-bold');
+            if(cat === 'limited') document.getElementById('navCatLimit').classList.add('text-white', 'font-bold');
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            const filtered = activeCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === activeCategory);
+
+            filtered.forEach(product => {
+                const isSold = product.status === 'sold';
+                const mainImg = product.images && product.images.length > 0 ? product.images[0] : emptyImageSvg;
+
+                const card = document.createElement('div');
+                card.className = `glass-panel rounded-2xl p-4 flex flex-col justify-between gold-glow transition-all ${isSold ? 'opacity-70' : ''}`;
+                card.innerHTML = `
+                    <div class="space-y-3 cursor-pointer" onclick="openProductDetail(${product.id})">
+                        <div class="relative w-full h-48 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-900 flex items-center justify-center">
+                            <img src="${mainImg}" class="w-full h-full object-cover">
+                            ${product.discount ? `<span class="absolute top-2 right-2 bg-rose-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase font-mono">${product.discount}</span>` : ''}
+                            <span class="absolute top-2 left-2 bg-zinc-950/80 text-[9px] px-2 py-0.5 rounded-full uppercase font-mono" style="color: var(--aura-main, #dfb254); border: 1px solid var(--aura-border, rgba(223,178,84,0.3));">${product.category}</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-sm text-white line-clamp-1">${product.title}</h3>
+                            <p class="text-[11px] text-zinc-400 line-clamp-2 mt-1 leading-relaxed">${product.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 mt-3 border-t border-zinc-900 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-zinc-500 uppercase block font-mono">Valuation</span>
+                            <span class="font-mono font-bold text-sm" style="color: var(--aura-main, #dfb254);">${formatPrice(product.price)}</span>
+                        </div>
+                        ${isSold 
+                            ? `<span class="px-3 py-1.5 rounded-xl bg-zinc-900 text-zinc-500 text-[10px] font-mono uppercase font-bold">Sold Out</span>`
+                            : `<button type="button" onclick="addToCart(${product.id})" class="px-3.5 py-2 rounded-xl text-zinc-950 font-bold text-[11px] uppercase tracking-wider flex items-center gap-1.5 transition-transform hover:scale-105 cursor-pointer" style="background-color: var(--aura-main, #dfb254);">
+                                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                                <span>Acquire</span>
+                               </button>`
+                        }
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
             lucide.createIcons();
         }
 
-        function openCustomerServiceModal() {
-            const select = document.getElementById('cancelOrderIdSelect');
-            select.innerHTML = '';
-            
-            if (orders.length === 0) {
-                select.innerHTML = `<option value="">No active orders found</option>`;
+        function openProductDetail(id) {
+            selectedProductForDetail = products.find(p => p.id === id);
+            if (!selectedProductForDetail) return;
+            selectedDetailImageIndex = 0;
+
+            document.getElementById('detailTitle').innerText = selectedProductForDetail.title;
+            document.getElementById('detailPrice').innerText = formatPrice(selectedProductForDetail.price);
+            document.getElementById('detailDesc').innerText = selectedProductForDetail.desc;
+            document.getElementById('detailCategoryBadge').innerText = selectedProductForDetail.category;
+
+            const discBadge = document.getElementById('detailDiscountBadge');
+            if(selectedProductForDetail.discount) {
+                discBadge.innerText = selectedProductForDetail.discount;
+                discBadge.classList.remove('hidden');
             } else {
-                orders.forEach(o => {
-                    const opt = document.createElement('option');
-                    opt.value = o.id;
-                    opt.textContent = `${o.id} - ${o.customer} (${o.status})`;
-                    select.appendChild(opt);
-                });
+                discBadge.classList.add('hidden');
             }
-            document.getElementById('cancellationSubSection').classList.add('hidden');
+
+            const statusBox = document.getElementById('detailStatusBox');
+            if(selectedProductForDetail.status === 'sold') {
+                statusBox.className = "inline-block px-3 py-1 rounded-lg text-xs font-mono font-bold bg-rose-950/80 text-rose-400 border border-rose-900";
+                statusBox.innerText = "STATUS: SOLD OUT";
+            } else {
+                statusBox.className = "inline-block px-3 py-1 rounded-lg text-xs font-mono font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-900";
+                statusBox.innerText = "STATUS: VAULT READY";
+            }
+
+            renderDetailGallery();
+
+            const acqBtn = document.getElementById('detailAcquireBtn');
+            if(selectedProductForDetail.status === 'sold') {
+                acqBtn.disabled = true;
+                acqBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                document.getElementById('detailBtnText').innerText = "Sold Out";
+            } else {
+                acqBtn.disabled = false;
+                acqBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                acqBtn.onclick = () => { addToCart(selectedProductForDetail.id); closeProductDetail(); };
+                document.getElementById('detailBtnText').innerText = i18n[currentLang].detailBtn;
+            }
+
+            document.getElementById('productDetailModal').classList.remove('hidden');
+        }
+
+        function renderDetailGallery() {
+            const images = selectedProductForDetail.images && selectedProductForDetail.images.length > 0 
+                ? selectedProductForDetail.images 
+                : [emptyImageSvg];
+            
+            document.getElementById('detailMainImg').src = images[selectedDetailImageIndex] || emptyImageSvg;
+
+            const thumbContainer = document.getElementById('detailThumbnails');
+            thumbContainer.innerHTML = '';
+
+            images.forEach((imgUrl, idx) => {
+                const thumb = document.createElement('div');
+                thumb.className = `w-14 h-14 rounded-xl overflow-hidden border cursor-pointer transition-all flex-shrink-0 ${idx === selectedDetailImageIndex ? 'border-aura-gold scale-105' : 'border-zinc-800 opacity-60 hover:opacity-100'}`;
+                thumb.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-cover">`;
+                thumb.onclick = () => {
+                    selectedDetailImageIndex = idx;
+                    renderDetailGallery();
+                };
+                thumbContainer.appendChild(thumb);
+            });
+        }
+
+        function closeProductDetail() {
+            document.getElementById('productDetailModal').classList.add('hidden');
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            if (!product || product.status === 'sold') return;
+
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            renderCart();
+            showToast(`${product.title} added to cart`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            renderCart();
+        }
+
+        function updateCartQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+            }
+            renderCart();
+        }
+
+        function applyPromoCode() {
+            const input = document.getElementById('cartPromoInput').value.trim().toUpperCase();
+            const feedback = document.getElementById('promoFeedback');
+
+            if (!input) {
+                appliedPromo = null;
+                feedback.innerHTML = `<span class="text-zinc-500">Promo code cleared.</span>`;
+                renderCart();
+                return;
+            }
+
+            const promo = promoCodes.find(p => p.code === input);
+            if (!promo) {
+                appliedPromo = null;
+                feedback.innerHTML = `<span class="text-rose-400">Invalid promo code.</span>`;
+                renderCart();
+                return;
+            }
+
+            if (promo.expiryDate && new Date(promo.expiryDate) < new Date()) {
+                appliedPromo = null;
+                feedback.innerHTML = `<span class="text-rose-400">Promo code has expired.</span>`;
+                renderCart();
+                return;
+            }
+
+            if (promo.maxUses !== null && promo.usedCount >= promo.maxUses) {
+                appliedPromo = null;
+                feedback.innerHTML = `<span class="text-rose-400">Promo code usage limit reached.</span>`;
+                renderCart();
+                return;
+            }
+
+            appliedPromo = promo;
+            feedback.innerHTML = `<span class="text-emerald-400">Code '${promo.code}' applied successfully!</span>`;
+            renderCart();
+        }
+
+        function calculateCartTotal() {
+            let subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            if (!appliedPromo) return subtotal;
+
+            if (appliedPromo.type === 'percent') {
+                subtotal = subtotal * (1 - (appliedPromo.value / 100));
+            } else if (appliedPromo.type === 'fixed') {
+                subtotal = Math.max(0, subtotal - appliedPromo.value);
+            }
+            return subtotal;
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartBadge');
+            container.innerHTML = '';
+
+            const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            badge.innerText = totalQty;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-zinc-500 text-xs font-mono">Your checkout cart is empty.</div>`;
+                document.getElementById('cartTotalPrice').innerText = formatPrice(0);
+                return;
+            }
+
+            cart.forEach(item => {
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between gap-3 bg-zinc-900/50 p-3 rounded-xl border border-zinc-800/80";
+                row.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <img src="${item.images[0] || emptyImageSvg}" class="w-12 h-12 rounded-lg object-cover bg-zinc-950 border border-zinc-800">
+                        <div>
+                            <h4 class="text-xs font-bold text-white line-clamp-1">${item.title}</h4>
+                            <span class="text-[11px] font-mono" style="color: var(--aura-main, #dfb254);">${formatPrice(item.price)}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center bg-zinc-950 rounded-lg border border-zinc-800 font-mono text-xs">
+                            <button type="button" onclick="updateCartQty(${item.id}, -1)" class="px-2 py-1 text-zinc-400 hover:text-white">-</button>
+                            <span class="px-2 text-white font-bold">${item.qty}</span>
+                            <button type="button" onclick="updateCartQty(${item.id}, 1)" class="px-2 py-1 text-zinc-400 hover:text-white">+</button>
+                        </div>
+                        <button type="button" onclick="removeFromCart(${item.id})" class="p-1.5 text-zinc-500 hover:text-rose-400"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            document.getElementById('cartTotalPrice').innerText = formatPrice(calculateCartTotal());
+            lucide.createIcons();
+        }
+
+        function toggleCartPanel() {
+            document.getElementById('cartPanel').classList.toggle('hidden');
+        }
+
+        function submitOrderWithReceipt() {
+            if (cart.length === 0) {
+                showErrorModal('Empty Cart', 'Please add items to your cart before proceeding to checkout.');
+                return;
+            }
+
+            const name = document.getElementById('customerName').value.trim();
+            const receiptInput = document.getElementById('receiptFile');
+
+            if (!name || receiptInput.files.length === 0) {
+                showErrorModal('Incomplete Details', 'Please enter your Name & Phone number, and upload your payment receipt screenshot.');
+                return;
+            }
+
+            const file = receiptInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const receiptImgData = e.target.result;
+                const newOrderId = 'AURA-' + Math.floor(1000 + Math.random() * 9000);
+
+                const newOrder = {
+                    id: newOrderId,
+                    customerName: name,
+                    receiptImg: receiptImgData,
+                    items: [...cart],
+                    totalUsd: calculateCartTotal(),
+                    status: 'pending',
+                    eta: 'Insured Geneva Express Delivery • Expected in 48h',
+                    messages: [
+                        { sender: 'system', text: `Order ${newOrderId} received. Receipt uploaded. Awaiting admin approval.`, time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) }
+                    ],
+                    date: new Date().toISOString()
+                };
+
+                if (appliedPromo) {
+                    appliedPromo.usedCount++;
+                    saveState();
+                }
+
+                orders.unshift(newOrder);
+                saveState();
+
+                cart = [];
+                appliedPromo = null;
+                document.getElementById('cartPromoInput').value = '';
+                document.getElementById('promoFeedback').innerHTML = '';
+                document.getElementById('customerName').value = '';
+                document.getElementById('receiptFile').value = '';
+                renderCart();
+                toggleCartPanel();
+
+                activeChatOrderId = newOrderId;
+                document.getElementById('successOrderIdBadge').innerText = `ORDER ID: #${newOrderId}`;
+                document.getElementById('successOrderModal').classList.remove('hidden');
+
+                renderCustomerTrackingBanner();
+                populateCancellationOrdersSelect();
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function renderCustomerTrackingBanner() {
+            const trackingSec = document.getElementById('trackingSection');
+            if (orders.length === 0) {
+                trackingSec.classList.add('hidden');
+                return;
+            }
+
+            trackingSec.classList.remove('hidden');
+            const latestOrder = orders.find(o => o.id === activeChatOrderId) || orders[0];
+            
+            const statusText = document.getElementById('trackingStatusText');
+            const etaBox = document.getElementById('trackingEtaBox');
+
+            if (latestOrder.status === 'pending') {
+                statusText.innerText = `Order #${latestOrder.id} is pending admin verification.`;
+                etaBox.innerText = "ESTIMATED ARRIVAL: PENDING VERIFICATION";
+            } else if (latestOrder.status === 'approved') {
+                statusText.innerText = `Order #${latestOrder.id} verified & confirmed!`;
+                etaBox.innerText = `ETA: ${latestOrder.eta}`;
+            } else if (latestOrder.status === 'cancelled') {
+                statusText.innerText = `Order #${latestOrder.id} request cancelled.`;
+                etaBox.innerText = "ORDER CANCELLED";
+            }
+        }
+
+        function openCustomerChatModal() {
+            if (orders.length === 0) {
+                showToast('No active orders found. Place an order to open chat.');
+                return;
+            }
+            if (!activeChatOrderId) activeChatOrderId = orders[0].id;
+            renderCustomerChatLog();
+            document.getElementById('customerChatModal').classList.remove('hidden');
+        }
+
+        function closeCustomerChatModal() {
+            document.getElementById('customerChatModal').classList.add('hidden');
+        }
+
+        function renderCustomerChatLog() {
+            const selector = document.getElementById('customerOrdersSelector');
+            selector.innerHTML = '';
+
+            orders.forEach(o => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `px-3 py-1 rounded-lg text-[10px] font-mono border flex-shrink-0 cursor-pointer ${o.id === activeChatOrderId ? 'bg-amber-400/20 border-amber-400 text-amber-400 font-bold' : 'bg-zinc-900 border-zinc-800 text-zinc-400'}`;
+                btn.innerText = `#${o.id}`;
+                btn.onclick = () => {
+                    activeChatOrderId = o.id;
+                    renderCustomerChatLog();
+                    renderCustomerTrackingBanner();
+                };
+                selector.appendChild(btn);
+            });
+
+            const order = orders.find(o => o.id === activeChatOrderId);
+            if (!order) return;
+
+            document.getElementById('custChatOrderHeader').innerText = `Order: #${order.id} • ${new Date(order.date).toLocaleDateString()}`;
+            document.getElementById('custChatTotalVal').innerText = formatPrice(order.totalUsd);
+            
+            const badge = document.getElementById('custChatStatusBadge');
+            badge.innerText = order.status.toUpperCase();
+            if(order.status === 'pending') badge.className = "text-amber-400 font-bold";
+            else if(order.status === 'approved') badge.className = "text-emerald-400 font-bold";
+            else badge.className = "text-rose-400 font-bold";
+
+            const itemsStr = order.items.map(i => `${i.qty}x ${i.title}`).join(', ');
+            document.getElementById('custChatItemsList').innerText = `Items: ${itemsStr}`;
+
+            const chatLog = document.getElementById('customerChatLog');
+            chatLog.innerHTML = '';
+
+            order.messages.forEach(m => {
+                const msgDiv = document.createElement('div');
+                const isCustomer = m.sender === 'customer';
+                msgDiv.className = `flex flex-col ${isCustomer ? 'items-end' : 'items-start'}`;
+                msgDiv.innerHTML = `
+                    <div class="max-w-[85%] p-2.5 rounded-2xl ${isCustomer ? 'bg-amber-400/20 border border-amber-400/30 text-white rounded-br-none' : 'bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-bl-none'}">
+                        <p class="text-xs">${m.text}</p>
+                        <span class="text-[9px] text-zinc-500 font-mono mt-1 block text-right">${m.time}</span>
+                    </div>
+                `;
+                chatLog.appendChild(msgDiv);
+            });
+
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function sendCustomerChatMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('customerChatInput');
+            const text = input.value.trim();
+            if (!text || !activeChatOrderId) return;
+
+            const order = orders.find(o => o.id === activeChatOrderId);
+            if (order) {
+                order.messages.push({
+                    sender: 'customer',
+                    text: text,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                saveState();
+                renderCustomerChatLog();
+                input.value = '';
+            }
+        }
+
+        function openCustomerServiceModal() {
+            populateCancellationOrdersSelect();
             document.getElementById('customerServiceModal').classList.remove('hidden');
         }
 
@@ -1873,225 +1851,703 @@
             document.getElementById('cancellationSubSection').classList.add('hidden');
         }
 
-        function onPresetReasonChange() {
-            const preset = document.getElementById('cancelReasonPreset').value;
-            const custom = document.getElementById('cancelReasonCustom');
-            if(preset && !preset.includes('Other')) {
-                custom.value = preset;
+        function populateCancellationOrdersSelect() {
+            const select = document.getElementById('cancelOrderIdSelect');
+            select.innerHTML = '';
+
+            if (orders.length === 0) {
+                select.innerHTML = '<option value="">No active orders found</option>';
+                return;
             }
+
+            orders.forEach(o => {
+                const opt = document.createElement('option');
+                opt.value = o.id;
+                opt.innerText = `Order #${o.id} - (${o.status.toUpperCase()}) - ${formatPrice(o.totalUsd)}`;
+                select.appendChild(opt);
+            });
         }
 
         function submitOrderCancellation() {
             const orderId = document.getElementById('cancelOrderIdSelect').value;
-            const customReason = document.getElementById('cancelReasonCustom').value.trim();
             const presetReason = document.getElementById('cancelReasonPreset').value;
+            const customReason = document.getElementById('cancelReasonCustom').value.trim();
 
-            if(!orderId) {
-                showToast("Please select an order to cancel.");
+            if (!orderId) {
+                showToast('Please select a valid order.');
                 return;
             }
-            const finalReason = customReason || presetReason || "Customer requested cancellation";
 
-            const ord = orders.find(o => o.id === orderId);
-            if(ord) {
-                ord.status = 'Cancellation Requested';
-                ord.eta = 'Cancellation Pending Review';
-                if(!ord.messages) ord.messages = [];
-                ord.messages.push({
-                    sender: 'customer',
-                    text: `[CANCELLATION REQUESTED] Reason: ${finalReason}`,
-                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            const reason = customReason || presetReason || 'Cancellation requested by customer.';
+            const order = orders.find(o => o.id === orderId);
+
+            if (order) {
+                order.status = 'cancelled';
+                order.messages.push({
+                    sender: 'system',
+                    text: `CANCELLATION REQUESTED: ${reason}`,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                 });
+                saveState();
 
-                saveData();
-                renderAdminOrders();
-                updateFloatingBadge();
+                showToast(`Order #${orderId} cancellation submitted.`);
+                hideCancellationSection();
                 closeCustomerServiceModal();
-                showToast(`Cancellation request for ${orderId} sent successfully!`);
-                openCustomerChatModal();
-            }
-        }
-
-        function renderProducts(filter = activeCategoryFilter) {
-            activeCategoryFilter = filter;
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
-            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
-
-            filtered.forEach(p => {
-                const isSold = p.status === 'sold';
-                const card = document.createElement('div');
-                card.className = 'glass-panel p-4 rounded-2xl gold-glow flex flex-col justify-between group cursor-pointer relative overflow-hidden';
-                card.onclick = () => openProductDetail(p.id);
-
-                let mainImg = (p.images && p.images.length > 0) ? p.images[0] : emptyImageSvg;
-                let discountHTML = p.discount ? `<span class="absolute top-3 right-3 bg-rose-600 text-white font-bold px-2.5 py-1 rounded-full text-[9px] uppercase font-mono tracking-widest z-10 shadow-lg">${p.discount}</span>` : '';
-                let statusBadge = isSold ? `<span class="absolute top-3 left-3 bg-zinc-950/90 text-rose-400 border border-rose-900/50 px-2.5 py-1 rounded-full text-[9px] uppercase font-mono tracking-widest z-10">Sold Out</span>` : `<span class="absolute top-3 left-3 bg-zinc-950/90 text-emerald-400 border border-emerald-900/50 px-2.5 py-1 rounded-full text-[9px] uppercase font-mono tracking-widest z-10">Available</span>`;
-
-                card.innerHTML = `
-                    <div>
-                        <div class="relative w-full h-64 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-zinc-900">
-                            ${discountHTML}
-                            ${statusBadge}
-                            <img src="${mainImg}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${isSold ? 'opacity-60 grayscale' : ''}">
-                        </div>
-                        <span class="text-[10px] uppercase tracking-widest font-mono block mb-1" style="color: var(--aura-main, #dfb254);">${p.category}</span>
-                        <h3 class="text-sm font-bold text-white mb-2 leading-snug font-serif">${p.title}</h3>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-zinc-900 mt-2">
-                        <span class="text-white font-bold text-sm font-mono">${formatPrice(p.price)}</span>
-                        ${isSold ? 
-                            `<span class="text-xs font-mono text-rose-400 font-bold">Unavailable</span>` : 
-                            `<button type="button" onclick="event.stopPropagation(); addToCart(${p.id})" class="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-200 text-xs font-semibold transition-all flex items-center gap-1 cursor-pointer" style="border: 1px solid var(--aura-border, rgba(223,178,84,0.3));">
-                                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                                <span>Acquire</span>
-                            </button>`
-                        }
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-            lucide.createIcons();
-        }
-
-        function openProductDetail(id) {
-            const p = products.find(x => x.id === id);
-            if (!p) return;
-
-            const imagesList = (p.images && p.images.length > 0) ? p.images : [emptyImageSvg];
-
-            document.getElementById('detailMainImg').src = imagesList[0];
-            document.getElementById('detailTitle').textContent = p.title;
-            document.getElementById('detailPrice').textContent = formatPrice(p.price);
-            document.getElementById('detailCategoryBadge').textContent = p.category;
-            document.getElementById('detailDesc').textContent = p.desc;
-
-            const thumbContainer = document.getElementById('detailThumbnails');
-            thumbContainer.innerHTML = '';
-            imagesList.forEach((imgSrc, idx) => {
-                const thumb = document.createElement('div');
-                thumb.className = `w-16 h-16 rounded-xl overflow-hidden cursor-pointer border-2 transition-all ${idx === 0 ? 'scale-105' : 'opacity-60 hover:opacity-100'}`;
-                thumb.style.borderColor = idx === 0 ? 'var(--aura-main, #dfb254)' : '#27272a';
-                thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
-                thumb.onclick = () => {
-                    document.getElementById('detailMainImg').src = imgSrc;
-                    Array.from(thumbContainer.children).forEach(t => {
-                        t.style.borderColor = '#27272a';
-                        t.classList.remove('scale-105');
-                        t.classList.add('opacity-60');
-                    });
-                    thumb.style.borderColor = 'var(--aura-main, #dfb254)';
-                    thumb.classList.add('scale-105');
-                    thumb.classList.remove('opacity-60');
-                };
-                thumbContainer.appendChild(thumb);
-            });
-
-            const discEl = document.getElementById('detailDiscountBadge');
-            if (p.discount) {
-                discEl.textContent = p.discount;
-                discEl.classList.remove('hidden');
-            } else {
-                discEl.classList.add('hidden');
-            }
-
-            const statusBox = document.getElementById('detailStatusBox');
-            const acquireBtn = document.getElementById('detailAcquireBtn');
-            const btnText = document.getElementById('detailBtnText');
-
-            if (p.status === 'sold') {
-                statusBox.textContent = "ITEM SOLD OUT (تم البيع)";
-                statusBox.className = "inline-block px-3 py-1 rounded-lg text-xs font-mono font-bold bg-rose-950/60 text-rose-400 border border-rose-900/50";
-                acquireBtn.disabled = true;
-                acquireBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                btnText.textContent = "Vault Item Sold Out";
-            } else {
-                statusBox.textContent = "AVAILABLE IN VAULT (متوفر في الخزنة)";
-                statusBox.className = "inline-block px-3 py-1 rounded-lg text-xs font-mono font-bold bg-emerald-950/60 text-emerald-400 border border-emerald-900/50";
-                acquireBtn.disabled = false;
-                acquireBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                btnText.textContent = i18n[currentLang].detailBtn;
-                acquireBtn.onclick = () => {
-                    addToCart(p.id);
-                    closeProductDetail();
-                };
-            }
-
-            document.getElementById('productDetailModal').classList.remove('hidden');
-        }
-
-        function closeProductDetail() {
-            document.getElementById('productDetailModal').classList.add('hidden');
-        }
-
-        function filterCategory(cat) {
-            renderProducts(cat);
-            scrollToCatalog();
-        }
-
-        function scrollToCatalog() {
-            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function addToCart(id) {
-            const prod = products.find(p => p.id === id);
-            if(prod && prod.status !== 'sold') {
-                cart.push(prod);
-                updateCartUI();
-                showToast(`Added "${prod.title}"`);
-            }
-        }
-
-        function updateCartUI() {
-            document.getElementById('cartBadge').textContent = cart.length;
-            const container = document.getElementById('cartItemsContainer');
-            container.innerHTML = '';
-            let subtotal = 0;
-
-            cart.forEach((item, idx) => {
-                subtotal += item.price;
-                const cartImg = (item.images && item.images.length > 0) ? item.images[0] : emptyImageSvg;
-                const div = document.createElement('div');
-                div.className = 'flex items-center justify-between p-2.5 bg-zinc-900/50 rounded-xl text-xs';
-                div.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <img src="${cartImg}" class="w-8 h-8 rounded object-cover border border-zinc-800">
-                        <div>
-                            <div class="font-bold text-white font-serif">${item.title}</div>
-                            <div class="font-mono" style="color: var(--aura-main, #dfb254);">${formatPrice(item.price)}</div>
-                        </div>
-                    </div>
-                    <button type="button" onclick="removeFromCart(${idx})" class="text-zinc-500 hover:text-rose-400 cursor-pointer"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                `;
-                container.appendChild(div);
-            });
-
-            let finalTotal = subtotal;
-            if (appliedPromo) {
-                if (appliedPromo.type === 'percent') {
-                    finalTotal = subtotal * (1 - appliedPromo.value / 100);
-                } else if (appliedPromo.type === 'fixed') {
-                    finalTotal = Math.max(0, subtotal - appliedPromo.value);
+                renderCustomerTrackingBanner();
+                if(document.getElementById('adminDashboard').classList.contains('hidden') === false) {
+                    renderAdminOrders();
                 }
             }
-
-            document.getElementById('cartTotalPrice').textContent = formatPrice(finalTotal);
-            lucide.createIcons();
         }
 
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
+        function openCustomerReviewsModal() {
+            renderCustomerReviewsList();
+            document.getElementById('customerReviewsModal').classList.remove('hidden');
         }
 
-        function toggleCartPanel() {
-            const panel = document.getElementById('cartPanel');
-            panel.classList.toggle('hidden');
+        function closeCustomerReviewsModal() {
+            document.getElementById('customerReviewsModal').classList.add('hidden');
         }
 
-        function showCustomError(title, desc) {
-            document.getElementById('errorModalTitle').textContent = title;
-            document.getElementById('errorModalDesc').textContent = desc;
+        function submitCustomerReview(e) {
+            e.preventDefault();
+            const author = document.getElementById('reviewAuthorName').value.trim();
+            const rating = parseInt(document.getElementById('reviewAuthorRating').value);
+            const text = document.getElementById('reviewAuthorText').value.trim();
+            const imgFile = document.getElementById('reviewImageFile').files[0];
+
+            if (!author || !text) return;
+
+            const handleNewReview = (imgData = '') => {
+                const newRev = {
+                    id: Date.now(),
+                    author,
+                    rating,
+                    text,
+                    imageUrl: imgData,
+                    date: new Date().toISOString().split('T')[0]
+                };
+                customerReviews.unshift(newRev);
+                saveState();
+
+                document.getElementById('reviewAuthorName').value = '';
+                document.getElementById('reviewAuthorText').value = '';
+                document.getElementById('reviewImageFile').value = '';
+
+                renderCustomerReviewsList();
+                showToast('Thank you! Your review has been published.');
+            };
+
+            if (imgFile) {
+                const reader = new FileReader();
+                reader.onload = (ev) => handleNewReview(ev.target.result);
+                reader.readAsDataURL(imgFile);
+            } else {
+                handleNewReview();
+            }
+        }
+
+        function renderCustomerReviewsList() {
+            const list = document.getElementById('customerReviewsList');
+            document.getElementById('reviewsCountBadge').innerText = customerReviews.length;
+            list.innerHTML = '';
+
+            if (customerReviews.length === 0) {
+                list.innerHTML = `<div class="text-center py-6 text-zinc-500 text-xs font-mono">No reviews published yet. Be the first to leave feedback!</div>`;
+                return;
+            }
+
+            customerReviews.forEach(r => {
+                const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+                const card = document.createElement('div');
+                card.className = "bg-zinc-900/60 p-4 rounded-2xl border border-zinc-800 space-y-2 text-xs";
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-white">${r.author}</span>
+                            <span class="text-amber-400 font-bold">${stars}</span>
+                        </div>
+                        <span class="text-[10px] text-zinc-500 font-mono">${r.date}</span>
+                    </div>
+                    <p class="text-zinc-300 leading-relaxed">${r.text}</p>
+                    ${r.imageUrl ? `<div class="w-20 h-20 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 mt-2"><img src="${r.imageUrl}" class="w-full h-full object-cover cursor-pointer" onclick="viewImageModal('${r.imageUrl}')"></div>` : ''}
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function openSecretModal() {
+            document.getElementById('secretModal').classList.remove('hidden');
+        }
+
+        function closeSecretModal() {
+            document.getElementById('secretModal').classList.add('hidden');
+            document.getElementById('passError').classList.add('hidden');
+            document.getElementById('passInput').value = '';
+        }
+
+        function verifyPasscode() {
+            const pass = document.getElementById('passInput').value;
+            if (pass === '1234') {
+                closeSecretModal();
+                openAdminDashboard();
+            } else {
+                document.getElementById('passError').classList.remove('hidden');
+            }
+        }
+
+        function openAdminDashboard() {
+            document.getElementById('editEgpRate').value = egpExchangeRate;
+            document.getElementById('editBrandTitle').value = brandData.title;
+            document.getElementById('editBrandSubtitle').value = brandData.subtitle;
+            document.getElementById('editCartTitle').value = checkoutTexts.cartTitle;
+            document.getElementById('editCartInstTitle').value = checkoutTexts.instTitle;
+            document.getElementById('editCartInstDesc').value = checkoutTexts.instDesc;
+
+            document.getElementById('editRevModalTitle').value = reviewTexts.modalTitle;
+            document.getElementById('editRevModalSub').value = reviewTexts.modalSub;
+            document.getElementById('editRevFormTitle').value = reviewTexts.formTitle;
+            document.getElementById('editRevSubmitBtn').value = reviewTexts.submitBtn;
+
+            renderAdminProducts();
+            renderAdminOrders();
+            renderAdminReviewsTable();
+            renderAdminPromoTable();
+            applyThemeColors();
+
+            document.getElementById('adminDashboard').classList.remove('hidden');
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboard').classList.add('hidden');
+        }
+
+        function saveExchangeRate(e) {
+            e.preventDefault();
+            const rate = parseFloat(document.getElementById('editEgpRate').value);
+            if (rate > 0) {
+                egpExchangeRate = rate;
+                saveState();
+                renderCatalog();
+                renderCart();
+                showToast(`Exchange rate updated: 1 USD = ${egpExchangeRate} EGP`);
+            }
+        }
+
+        function saveBrandSettings(e) {
+            e.preventDefault();
+            brandData.title = document.getElementById('editBrandTitle').value.trim();
+            brandData.subtitle = document.getElementById('editBrandSubtitle').value.trim();
+
+            const file = document.getElementById('brandLogoFile').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    brandData.logoUrl = ev.target.result;
+                    saveState();
+                    updateUI();
+                    showToast('Brand & Logo Settings Saved!');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                saveState();
+                updateUI();
+                showToast('Brand Settings Saved!');
+            }
+        }
+
+        function saveCheckoutCartTexts(e) {
+            e.preventDefault();
+            checkoutTexts.cartTitle = document.getElementById('editCartTitle').value.trim();
+            checkoutTexts.instTitle = document.getElementById('editCartInstTitle').value.trim();
+            checkoutTexts.instDesc = document.getElementById('editCartInstDesc').value.trim();
+
+            saveState();
+            updateUI();
+            showToast('Checkout Cart Texts Updated!');
+        }
+
+        function saveReviewsTexts(e) {
+            e.preventDefault();
+            reviewTexts.modalTitle = document.getElementById('editRevModalTitle').value.trim();
+            reviewTexts.modalSub = document.getElementById('editRevModalSub').value.trim();
+            reviewTexts.formTitle = document.getElementById('editRevFormTitle').value.trim();
+            reviewTexts.submitBtn = document.getElementById('editRevSubmitBtn').value.trim();
+
+            saveState();
+            updateUI();
+            showToast('Reviews Section Texts Saved!');
+        }
+
+        function renderAdminReviewsTable() {
+            const table = document.getElementById('adminReviewsTable');
+            document.getElementById('adminReviewsCount').innerText = `${customerReviews.length} Reviews`;
+            table.innerHTML = '';
+
+            customerReviews.forEach(r => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="p-2.5">
+                        <img src="${r.imageUrl || emptyImageSvg}" class="w-9 h-9 rounded-lg object-cover bg-zinc-950 border border-zinc-800">
+                    </td>
+                    <td class="p-2.5 font-bold text-white">${r.author}</td>
+                    <td class="p-2.5 text-amber-400 font-bold">${r.rating}/5</td>
+                    <td class="p-2.5 text-zinc-300 max-w-xs truncate">${r.text}</td>
+                    <td class="p-2.5 text-right">
+                        <button type="button" onclick="deleteCustomerReview(${r.id})" class="px-2.5 py-1 bg-rose-950/80 text-rose-400 border border-rose-900 rounded-lg hover:bg-rose-900 hover:text-white transition-all cursor-pointer">Delete</button>
+                    </td>
+                `;
+                table.appendChild(tr);
+            });
+        }
+
+        function deleteCustomerReview(id) {
+            customerReviews = customerReviews.filter(r => r.id !== id);
+            saveState();
+            renderAdminReviewsTable();
+            renderCustomerReviewsList();
+            showToast('Review deleted successfully.');
+        }
+
+        function renderAdminPromoTable() {
+            const table = document.getElementById('adminPromoTable');
+            document.getElementById('adminPromoCount').innerText = `${promoCodes.length} Codes`;
+            table.innerHTML = '';
+
+            promoCodes.forEach(p => {
+                const tr = document.createElement('tr');
+                const valStr = p.type === 'percent' ? `${p.value}% OFF` : `$${p.value} OFF`;
+                const usesStr = `${p.usedCount} / ${p.maxUses !== null ? p.maxUses : '∞'}`;
+                const perCustStr = p.maxUsesPerCustomer !== null ? `${p.maxUsesPerCustomer}` : '∞';
+                const expiryStr = p.expiryDate || 'No Limit';
+
+                tr.innerHTML = `
+                    <td class="p-2.5 font-bold text-amber-400">${p.code}</td>
+                    <td class="p-2.5 text-white font-mono">${valStr}</td>
+                    <td class="p-2.5 font-mono text-zinc-300">${usesStr}</td>
+                    <td class="p-2.5 font-mono text-zinc-300">${perCustStr}</td>
+                    <td class="p-2.5 font-mono text-zinc-400">${expiryStr}</td>
+                    <td class="p-2.5 text-right space-x-1">
+                        <button type="button" onclick="openEditPromoModal(${p.id})" class="px-2 py-1 bg-zinc-800 text-zinc-300 rounded-lg hover:text-white cursor-pointer">Edit</button>
+                        <button type="button" onclick="deletePromoCode(${p.id})" class="px-2 py-1 bg-rose-950 text-rose-400 border border-rose-900 rounded-lg hover:bg-rose-900 hover:text-white cursor-pointer">Delete</button>
+                    </td>
+                `;
+                table.appendChild(tr);
+            });
+        }
+
+        function addNewPromoCode(e) {
+            e.preventDefault();
+            const code = document.getElementById('newPromoCode').value.trim().toUpperCase();
+            const type = document.getElementById('newPromoType').value;
+            const value = parseFloat(document.getElementById('newPromoValue').value);
+            const maxUses = document.getElementById('newPromoMaxUses').value ? parseInt(document.getElementById('newPromoMaxUses').value) : null;
+            const maxPerCustomer = document.getElementById('newPromoMaxPerCustomer').value ? parseInt(document.getElementById('newPromoMaxPerCustomer').value) : null;
+            const expiry = document.getElementById('newPromoExpiry').value;
+
+            if (!code || isNaN(value)) return;
+
+            const existing = promoCodes.find(p => p.code === code);
+            if (existing) {
+                showToast('Promo code already exists!');
+                return;
+            }
+
+            promoCodes.push({
+                id: Date.now(),
+                code,
+                type,
+                value,
+                maxUses,
+                maxUsesPerCustomer: maxPerCustomer,
+                usedCount: 0,
+                expiryDate: expiry,
+                userUsages: {}
+            });
+
+            saveState();
+            renderAdminPromoTable();
+
+            document.getElementById('newPromoCode').value = '';
+            document.getElementById('newPromoValue').value = '';
+            document.getElementById('newPromoMaxUses').value = '';
+            document.getElementById('newPromoMaxPerCustomer').value = '';
+            document.getElementById('newPromoExpiry').value = '';
+
+            showToast(`Promo Code ${code} created!`);
+        }
+
+        function openEditPromoModal(id) {
+            const promo = promoCodes.find(p => p.id === id);
+            if (!promo) return;
+
+            document.getElementById('editPromoId').value = promo.id;
+            document.getElementById('editPromoCodeInput').value = promo.code;
+            document.getElementById('editPromoTypeInput').value = promo.type;
+            document.getElementById('editPromoValueInput').value = promo.value;
+            document.getElementById('editPromoMaxUsesInput').value = promo.maxUses !== null ? promo.maxUses : '';
+            document.getElementById('editPromoMaxPerCustomerInput').value = promo.maxUsesPerCustomer !== null ? promo.maxUsesPerCustomer : '';
+            document.getElementById('editPromoExpiryInput').value = promo.expiryDate || '';
+
+            document.getElementById('editPromoModal').classList.remove('hidden');
+        }
+
+        function closeEditPromoModal() {
+            document.getElementById('editPromoModal').classList.add('hidden');
+        }
+
+        function savePromoEdit(e) {
+            e.preventDefault();
+            const id = parseInt(document.getElementById('editPromoId').value);
+            const promo = promoCodes.find(p => p.id === id);
+            if (!promo) return;
+
+            promo.code = document.getElementById('editPromoCodeInput').value.trim().toUpperCase();
+            promo.type = document.getElementById('editPromoTypeInput').value;
+            promo.value = parseFloat(document.getElementById('editPromoValueInput').value);
+            
+            const maxUses = document.getElementById('editPromoMaxUsesInput').value;
+            promo.maxUses = maxUses !== '' ? parseInt(maxUses) : null;
+
+            const maxPerCustomer = document.getElementById('editPromoMaxPerCustomerInput').value;
+            promo.maxUsesPerCustomer = maxPerCustomer !== '' ? parseInt(maxPerCustomer) : null;
+
+            promo.expiryDate = document.getElementById('editPromoExpiryInput').value;
+
+            saveState();
+            renderAdminPromoTable();
+            closeEditPromoModal();
+            showToast('Promo Code updated successfully!');
+        }
+
+        function deletePromoCode(id) {
+            promoCodes = promoCodes.filter(p => p.id !== id);
+            saveState();
+            renderAdminPromoTable();
+            showToast('Promo code deleted.');
+        }
+
+        function renderAdminOrders() {
+            const pendingList = document.getElementById('adminPendingOrdersList');
+            const activeList = document.getElementById('adminActiveOrdersList');
+
+            const pendingOrders = orders.filter(o => o.status === 'pending');
+            const activeOrders = orders.filter(o => o.status === 'approved' || o.status === 'cancelled');
+
+            document.getElementById('pendingOrdersCount').innerText = `${pendingOrders.length} Pending`;
+            document.getElementById('activeOrdersCount').innerText = `${activeOrders.length} Active/Handled`;
+
+            pendingList.innerHTML = '';
+            activeList.innerHTML = '';
+
+            if (pendingOrders.length === 0) {
+                pendingList.innerHTML = `<div class="text-zinc-500 py-4 text-center">No pending orders.</div>`;
+            } else {
+                pendingOrders.forEach(o => pendingList.appendChild(createAdminOrderCard(o)));
+            }
+
+            if (activeOrders.length === 0) {
+                activeList.innerHTML = `<div class="text-zinc-500 py-4 text-center">No active/handled orders.</div>`;
+            } else {
+                activeOrders.forEach(o => activeList.appendChild(createAdminOrderCard(o)));
+            }
+        }
+
+        function createAdminOrderCard(o) {
+            const card = document.createElement('div');
+            card.className = "bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 space-y-3";
+            
+            const itemsSummary = o.items.map(i => `${i.qty}x ${i.title}`).join(', ');
+
+            card.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="font-bold text-white text-xs">#${o.id} &bull; ${o.customerName}</span>
+                        <span class="block text-[10px] text-zinc-400">${new Date(o.date).toLocaleString()}</span>
+                    </div>
+                    <span class="font-bold text-amber-400 font-mono">${formatPrice(o.totalUsd)}</span>
+                </div>
+
+                <div class="text-[11px] text-zinc-300 truncate">Items: ${itemsSummary}</div>
+
+                <div class="flex items-center justify-between gap-2 pt-2 border-t border-zinc-800">
+                    <button type="button" onclick="viewReceiptModal('${o.receiptImg}')" class="px-2.5 py-1.5 bg-zinc-950 border border-zinc-800 rounded-xl text-[10px] text-zinc-300 hover:text-white flex items-center gap-1 cursor-pointer">
+                        <i data-lucide="image" class="w-3.5 h-3.5"></i>
+                        <span>Receipt</span>
+                    </button>
+
+                    <button type="button" onclick="openAdminChatModal('${o.id}')" class="px-2.5 py-1.5 bg-zinc-950 border border-zinc-800 rounded-xl text-[10px] text-zinc-300 hover:text-white flex items-center gap-1 cursor-pointer">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5 text-amber-400"></i>
+                        <span>Chat (${o.messages.length})</span>
+                    </button>
+
+                    ${o.status === 'pending' ? `
+                        <button type="button" onclick="openEtaModal('${o.id}')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-[10px] font-bold uppercase tracking-wider cursor-pointer">
+                            Approve
+                        </button>
+                    ` : `
+                        <span class="text-[10px] font-bold font-mono ${o.status === 'approved' ? 'text-emerald-400' : 'text-rose-400'}">${o.status.toUpperCase()}</span>
+                    `}
+                </div>
+            `;
+            return card;
+        }
+
+        function openEtaModal(orderId) {
+            selectedOrderForApproval = orderId;
+            document.getElementById('etaModal').classList.remove('hidden');
+        }
+
+        function closeEtaModal() {
+            document.getElementById('etaModal').classList.add('hidden');
+            selectedOrderForApproval = null;
+        }
+
+        function confirmApproveOrder() {
+            if (!selectedOrderForApproval) return;
+            const etaText = document.getElementById('etaInputText').value.trim();
+
+            const order = orders.find(o => o.id === selectedOrderForApproval);
+            if (order) {
+                order.status = 'approved';
+                order.eta = etaText;
+                order.messages.push({
+                    sender: 'system',
+                    text: `ORDER APPROVED BY ADMIN. Delivery ETA: ${etaText}`,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                saveState();
+
+                showToast(`Order #${order.id} approved!`);
+                closeEtaModal();
+                renderAdminOrders();
+                renderCustomerTrackingBanner();
+            }
+        }
+
+        function openAdminChatModal(orderId) {
+            activeAdminChatOrderId = orderId;
+            renderAdminChatLog();
+            document.getElementById('adminChatModal').classList.remove('hidden');
+        }
+
+        function closeAdminChatModal() {
+            document.getElementById('adminChatModal').classList.add('hidden');
+            activeAdminChatOrderId = null;
+        }
+
+        function renderAdminChatLog() {
+            const order = orders.find(o => o.id === activeAdminChatOrderId);
+            if (!order) return;
+
+            document.getElementById('adminChatOrderHeader').innerText = `Order: #${order.id} • ${order.customerName}`;
+
+            const chatLog = document.getElementById('adminChatLog');
+            chatLog.innerHTML = '';
+
+            order.messages.forEach(m => {
+                const msgDiv = document.createElement('div');
+                const isAdmin = m.sender === 'admin' || m.sender === 'system';
+                msgDiv.className = `flex flex-col ${isAdmin ? 'items-end' : 'items-start'}`;
+                msgDiv.innerHTML = `
+                    <div class="max-w-[85%] p-2.5 rounded-2xl ${isAdmin ? 'bg-amber-400/20 border border-amber-400/30 text-white rounded-br-none' : 'bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-bl-none'}">
+                        <span class="text-[9px] text-amber-400 font-mono uppercase block">${m.sender}</span>
+                        <p class="text-xs">${m.text}</p>
+                        <span class="text-[9px] text-zinc-500 font-mono mt-1 block text-right">${m.time}</span>
+                    </div>
+                `;
+                chatLog.appendChild(msgDiv);
+            });
+
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function sendAdminChatMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('adminChatInput');
+            const text = input.value.trim();
+            if (!text || !activeAdminChatOrderId) return;
+
+            const order = orders.find(o => o.id === activeAdminChatOrderId);
+            if (order) {
+                order.messages.push({
+                    sender: 'admin',
+                    text: text,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                saveState();
+                renderAdminChatLog();
+                renderAdminOrders();
+                input.value = '';
+            }
+        }
+
+        function viewReceiptModal(imgUrl) {
+            document.getElementById('receiptModalImg').src = imgUrl;
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+        function viewImageModal(imgUrl) {
+            viewReceiptModal(imgUrl);
+        }
+
+        function addNewProduct(e) {
+            e.preventDefault();
+            const title = document.getElementById('newTitle').value.trim();
+            const price = parseFloat(document.getElementById('newPrice').value);
+            const category = document.getElementById('newCategory').value;
+            const status = document.getElementById('newStatus').value;
+            const discount = document.getElementById('newDiscount').value.trim();
+            const desc = document.getElementById('newDesc').value.trim();
+            const files = document.getElementById('newImagesFiles').files;
+
+            if (!title || isNaN(price) || !desc) return;
+
+            const handleCreate = (imagesArray = [emptyImageSvg]) => {
+                const newProd = {
+                    id: Date.now(),
+                    title,
+                    price,
+                    category,
+                    status,
+                    discount,
+                    desc,
+                    images: imagesArray.length > 0 ? imagesArray : [emptyImageSvg]
+                };
+
+                products.unshift(newProd);
+                saveState();
+                renderCatalog();
+                renderAdminProducts();
+
+                document.getElementById('newTitle').value = '';
+                document.getElementById('newPrice').value = '';
+                document.getElementById('newDiscount').value = '';
+                document.getElementById('newDesc').value = '';
+                document.getElementById('newImagesFiles').value = '';
+
+                showToast('New Masterpiece Published!');
+            };
+
+            if (files.length > 0) {
+                const readPromises = Array.from(files).map(file => {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = ev => resolve(ev.target.result);
+                        reader.readAsDataURL(file);
+                    });
+                });
+
+                Promise.all(readPromises).then(imgs => handleCreate(imgs));
+            } else {
+                handleCreate();
+            }
+        }
+
+        function renderAdminProducts() {
+            const table = document.getElementById('adminProductsTable');
+            document.getElementById('adminProductCount').innerText = `${products.length} Items`;
+            table.innerHTML = '';
+
+            products.forEach(p => {
+                const tr = document.createElement('tr');
+                const mainImg = p.images && p.images.length > 0 ? p.images[0] : emptyImageSvg;
+
+                tr.innerHTML = `
+                    <td class="p-3">
+                        <img src="${mainImg}" class="w-10 h-10 rounded-lg object-cover bg-zinc-950 border border-zinc-800">
+                    </td>
+                    <td class="p-3 font-bold text-white max-w-xs truncate">${p.title}</td>
+                    <td class="p-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${p.status === 'available' ? 'bg-emerald-950 text-emerald-400 border border-emerald-900' : 'bg-rose-950 text-rose-400 border border-rose-900'}">
+                            ${p.status.toUpperCase()}
+                        </span>
+                    </td>
+                    <td class="p-3 font-mono font-bold" style="color: var(--aura-main, #dfb254);">${formatPrice(p.price)}</td>
+                    <td class="p-3 text-right space-x-1">
+                        <button type="button" onclick="openEditModal(${p.id})" class="px-2.5 py-1 bg-zinc-800 text-zinc-300 rounded-lg hover:text-white cursor-pointer">Edit</button>
+                        <button type="button" onclick="deleteProduct(${p.id})" class="px-2.5 py-1 bg-rose-950 text-rose-400 border border-rose-900 rounded-lg hover:bg-rose-900 hover:text-white cursor-pointer">Delete</button>
+                    </td>
+                `;
+                table.appendChild(tr);
+            });
+        }
+
+        function openEditModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('editProdId').value = product.id;
+            document.getElementById('editTitle').value = product.title;
+            document.getElementById('editPrice').value = product.price;
+            document.getElementById('editCategory').value = product.category;
+            document.getElementById('editStatus').value = product.status;
+            document.getElementById('editDiscount').value = product.discount || '';
+            document.getElementById('editDesc').value = product.desc;
+
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.add('hidden');
+        }
+
+        function saveProductEdit(e) {
+            e.preventDefault();
+            const id = parseInt(document.getElementById('editProdId').value);
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            product.title = document.getElementById('editTitle').value.trim();
+            product.price = parseFloat(document.getElementById('editPrice').value);
+            product.category = document.getElementById('editCategory').value;
+            product.status = document.getElementById('editStatus').value;
+            product.discount = document.getElementById('editDiscount').value.trim();
+            product.desc = document.getElementById('editDesc').value.trim();
+
+            const files = document.getElementById('editImagesFiles').files;
+
+            const finalizeSave = () => {
+                saveState();
+                renderCatalog();
+                renderAdminProducts();
+                closeEditModal();
+                showToast('Product parameters updated!');
+            };
+
+            if (files.length > 0) {
+                const readPromises = Array.from(files).map(file => {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = ev => resolve(ev.target.result);
+                        reader.readAsDataURL(file);
+                    });
+                });
+
+                Promise.all(readPromises).then(imgs => {
+                    product.images = imgs;
+                    finalizeSave();
+                });
+            } else {
+                finalizeSave();
+            }
+        }
+
+        function deleteProduct(id) {
+            products = products.filter(p => p.id !== id);
+            saveState();
+            renderCatalog();
+            renderAdminProducts();
+            showToast('Item removed from vault inventory.');
+        }
+
+        function showErrorModal(title, desc) {
+            document.getElementById('errorModalTitle').innerText = title;
+            document.getElementById('errorModalDesc').innerText = desc;
             document.getElementById('errorModal').classList.remove('hidden');
         }
 
@@ -2104,689 +2560,26 @@
             openCustomerChatModal();
         }
 
-        function submitOrderWithReceipt() {
-            if (cart.length === 0) {
-                showCustomError('السلة فارغة', 'برجاء إضافة قطع فريدة إلى السلة أولاً قبل إتمام الطلب.');
-                return;
-            }
-            const name = document.getElementById('customerName').value.trim();
-            const fileInput = document.getElementById('receiptFile');
-
-            if (!name) {
-                showCustomError('الاسم ورقم الهاتف مطلوبان', 'برجاء كتابة اسمك ورقم هاتفك في الخانة المخصصة لتتمكن الإدارة من التواصل معك.');
-                return;
-            }
-            if (!fileInput.files || !fileInput.files[0]) {
-                showCustomError('صورة إيصال الدفع مفقودة', 'يرجى رفع لقطة شاشة (سكريين شوت) لإيصال التحويل عبر Instapay أو Tildapay لتأكيد الطلب.');
-                return;
-            }
-
-            if (appliedPromo) {
-                if(appliedPromo.maxUsesPerCustomer !== null) {
-                    if(!appliedPromo.userUsages) appliedPromo.userUsages = {};
-                    const currentUses = appliedPromo.userUsages[name] || 0;
-                    if(currentUses >= appliedPromo.maxUsesPerCustomer) {
-                        showCustomError('تجاوز الحد المسموح للكود', `عذراً (${name})، لقد استنفدت الحد المسموح لك لاستخدام هذا الكود (${appliedPromo.maxUsesPerCustomer} مرة).`);
-                        return;
-                    }
-                }
-            }
-
-            const reader = new FileReader();
-            reader.onload = function(evt) {
-                const orderId = `#AURA-${Math.floor(1000 + Math.random() * 9000)}`;
-                let subtotal = cart.reduce((acc, curr) => acc + curr.price, 0);
-                let finalTotal = subtotal;
-                
-                if (appliedPromo) {
-                    if (appliedPromo.type === 'percent') finalTotal = subtotal * (1 - appliedPromo.value / 100);
-                    else if (appliedPromo.type === 'fixed') finalTotal = Math.max(0, subtotal - appliedPromo.value);
-
-                    const promoInStore = promoCodes.find(p => p.id === appliedPromo.id);
-                    if(promoInStore) {
-                        promoInStore.usedCount = (promoInStore.usedCount || 0) + 1;
-                        if(!promoInStore.userUsages) promoInStore.userUsages = {};
-                        promoInStore.userUsages[name] = (promoInStore.userUsages[name] || 0) + 1;
-                    }
-                }
-
-                const newOrder = {
-                    id: orderId,
-                    customer: name,
-                    items: cart.map(i => i.title).join(', '),
-                    total: finalTotal,
-                    currency: currentCurrency,
-                    formattedTotal: formatPrice(finalTotal),
-                    receiptUrl: evt.target.result,
-                    status: 'Pending Verification',
-                    eta: 'Awaiting Receipt Review by Admin',
-                    messages: [
-                        { sender: 'admin', text: `Welcome ${name}! Order ${orderId} received. We are currently verifying your payment receipt.`, time: 'Just now' }
-                    ]
-                };
-
-                orders.unshift(newOrder);
-                currentActiveCustomerOrderId = orderId;
-                saveData();
-                cart = [];
-                appliedPromo = null;
-                document.getElementById('cartPromoInput').value = '';
-                document.getElementById('promoFeedback').textContent = '';
-                updateCartUI();
-                toggleCartPanel();
-                
-                document.getElementById('customerName').value = '';
-                fileInput.value = '';
-
-                document.getElementById('trackingSection').classList.remove('hidden');
-                document.getElementById('trackingStatusText').textContent = `Order (${orderId}) submitted. Awaiting Admin verification.`;
-                document.getElementById('trackingEtaBox').textContent = `ESTIMATED ARRIVAL: PENDING REVIEW`;
-
-                document.getElementById('successOrderIdBadge').textContent = `Your Order Reference: ${orderId}`;
-                document.getElementById('successOrderModal').classList.remove('hidden');
-
-                renderAdminOrders();
-                renderAdminPromoTable();
-                updateFloatingBadge();
-            };
-            reader.readAsDataURL(fileInput.files[0]);
-        }
-
-        function openCustomerChatModal() {
-            if (orders.length === 0) {
-                showToast("No active orders found. Please submit an order first.");
-                return;
-            }
-            if (!currentActiveCustomerOrderId || !orders.find(o => o.id === currentActiveCustomerOrderId)) {
-                currentActiveCustomerOrderId = orders[0].id;
-            }
-
-            renderCustomerOrdersSelector();
-            const ord = orders.find(o => o.id === currentActiveCustomerOrderId);
-            if (!ord) return;
-
-            document.getElementById('custChatOrderHeader').textContent = `Order Reference: ${ord.id} • Customer: ${ord.customer}`;
-            document.getElementById('custChatTotalVal').textContent = ord.formattedTotal || `$${ord.total.toLocaleString()}`;
-            document.getElementById('custChatStatusBadge').textContent = ord.status;
-            document.getElementById('custChatItemsList').textContent = `Items: ${ord.items}`;
-
-            renderCustomerChatLogs(ord);
-            document.getElementById('customerChatModal').classList.remove('hidden');
-        }
-
-        function closeCustomerChatModal() {
-            document.getElementById('customerChatModal').classList.add('hidden');
-        }
-
-        function renderCustomerOrdersSelector() {
-            const selector = document.getElementById('customerOrdersSelector');
-            selector.innerHTML = '';
-            if (orders.length <= 1) {
-                selector.classList.add('hidden');
-                return;
-            }
-            selector.classList.remove('hidden');
-
-            orders.forEach(ord => {
-                const btn = document.createElement('button');
-                const isSelected = ord.id === currentActiveCustomerOrderId;
-                btn.type = 'button';
-                btn.className = `px-3 py-1.5 rounded-xl font-mono text-[10px] uppercase font-bold transition-all cursor-pointer ${isSelected ? 'bg-aura-gold text-zinc-950 shadow-md' : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'}`;
-                if(isSelected) {
-                    btn.style.backgroundColor = 'var(--aura-main, #dfb254)';
-                }
-                btn.textContent = `${ord.id} (${ord.status})`;
-                btn.onclick = () => {
-                    currentActiveCustomerOrderId = ord.id;
-                    openCustomerChatModal();
-                };
-                selector.appendChild(btn);
-            });
-        }
-
-        function renderCustomerChatLogs(ord) {
-            const container = document.getElementById('customerChatLog');
-            container.innerHTML = '';
-            
-            const msgs = ord.messages || [];
-            msgs.forEach(m => {
-                const div = document.createElement('div');
-                const isAdmin = m.sender === 'admin';
-                div.className = `flex flex-col ${isAdmin ? 'items-start' : 'items-end'}`;
-                div.innerHTML = `
-                    <div class="max-w-[80%] p-2.5 rounded-2xl ${isAdmin ? 'bg-zinc-900 border border-zinc-800 text-zinc-200' : 'bg-aura-gold text-zinc-950 font-medium'}" ${isAdmin ? 'style="border-color: var(--aura-border, rgba(223,178,84,0.3))"' : 'style="background-color: var(--aura-main, #dfb254)"'}>
-                        <div class="text-[9px] uppercase font-mono mb-1 font-bold ${isAdmin ? 'text-aura-gold' : 'text-zinc-900'}">${isAdmin ? 'AURA Admin Vault' : 'You (Customer)'}</div>
-                        <div>${m.text}</div>
-                        <div class="text-[8px] opacity-60 text-right mt-1 font-mono">${m.time || ''}</div>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function sendCustomerChatMessage(e) {
-            e.preventDefault();
-            const input = document.getElementById('customerChatInput');
-            const txt = input.value.trim();
-            if (!txt) return;
-
-            const ord = orders.find(o => o.id === currentActiveCustomerOrderId);
-            if (!ord) return;
-
-            if (!ord.messages) ord.messages = [];
-            ord.messages.push({
-                sender: 'customer',
-                text: txt,
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            });
-
-            saveData();
-            renderCustomerChatLogs(ord);
-            input.value = '';
-            showToast('Message sent to Vault Admin!');
-            renderAdminOrders();
-        }
-
-        function updateFloatingBadge() {
-            const badge = document.getElementById('floatingChatBadge');
-            let unreadCount = 0;
-            orders.forEach(o => {
-                if(o.messages && o.messages.length > 0) {
-                    const lastMsg = o.messages[o.messages.length - 1];
-                    if(lastMsg.sender === 'admin') unreadCount++;
-                }
-            });
-            if(unreadCount > 0) {
-                badge.textContent = unreadCount;
-                badge.classList.remove('hidden');
-            } else {
-                badge.classList.add('hidden');
-            }
-        }
-
-        function openAdminChatModal(index) {
-            currentAdminChatOrderIndex = index;
-            const ord = orders[index];
-            if (!ord) return;
-
-            document.getElementById('adminChatOrderHeader').textContent = `Order: ${ord.id} • Customer: ${ord.customer}`;
-            renderAdminChatLogs(ord);
-            document.getElementById('adminChatModal').classList.remove('hidden');
-        }
-
-        function closeAdminChatModal() {
-            document.getElementById('adminChatModal').classList.add('hidden');
-            currentAdminChatOrderIndex = null;
-        }
-
-        function renderAdminChatLogs(ord) {
-            const container = document.getElementById('adminChatLog');
-            container.innerHTML = '';
-            
-            const msgs = ord.messages || [];
-            msgs.forEach(m => {
-                const div = document.createElement('div');
-                const isAdmin = m.sender === 'admin';
-                div.className = `flex flex-col ${isAdmin ? 'items-end' : 'items-start'}`;
-                div.innerHTML = `
-                    <div class="max-w-[80%] p-2.5 rounded-2xl ${isAdmin ? 'bg-zinc-900 text-white border border-zinc-800' : 'bg-zinc-800 text-zinc-200'}" ${isAdmin ? 'style="border-color: var(--aura-border, rgba(223,178,84,0.3))"' : ''}>
-                        <div class="text-[9px] uppercase font-mono mb-1 font-bold ${isAdmin ? 'text-aura-gold' : 'text-emerald-400'}">${isAdmin ? 'AURA Admin (You)' : ord.customer}</div>
-                        <div>${m.text}</div>
-                        <div class="text-[8px] opacity-60 text-right mt-1 font-mono">${m.time || ''}</div>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function sendAdminChatMessage(e) {
-            e.preventDefault();
-            if (currentAdminChatOrderIndex === null) return;
-            const input = document.getElementById('adminChatInput');
-            const txt = input.value.trim();
-            if (!txt) return;
-
-            const ord = orders[currentAdminChatOrderIndex];
-            if (!ord) return;
-
-            if (!ord.messages) ord.messages = [];
-            ord.messages.push({
-                sender: 'admin',
-                text: txt,
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            });
-
-            saveData();
-            renderAdminChatLogs(ord);
-            input.value = '';
-            showToast('Response sent to customer!');
-            updateFloatingBadge();
-            
-            if (currentActiveCustomerOrderId === ord.id) {
-                renderCustomerChatLogs(ord);
-            }
-        }
-
-        window.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && (e.key === 'M' || e.key === 'M' || e.code === 'KeyM')) {
-                e.preventDefault();
-                openSecretModal();
-            }
-        });
-
-        function openSecretModal() {
-            document.getElementById('secretModal').classList.remove('hidden');
-            document.getElementById('passInput').focus();
-        }
-
-        function closeSecretModal() {
-            document.getElementById('secretModal').classList.add('hidden');
-            document.getElementById('passError').classList.add('hidden');
-            document.getElementById('passInput').value = '';
-        }
-
-        function verifyPasscode() {
-            if (document.getElementById('passInput').value === '01022820109') {
-                closeSecretModal();
-                openAdminDashboard();
-                showToast('Master Access Granted');
-            } else {
-                document.getElementById('passError').classList.remove('hidden');
-            }
-        }
-
-        function openAdminDashboard() {
-            document.getElementById('adminDashboard').classList.remove('hidden');
-            renderAdminInventoryTable();
-            renderAdminOrders();
-            renderAdminPromoTable();
-            renderAdminReviewsTable();
-            updateUI();
-        }
-
-        function closeAdminDashboard() {
-            document.getElementById('adminDashboard').classList.add('hidden');
-        }
-
-        function addNewProduct(e) {
-            e.preventDefault();
-            const title = document.getElementById('newTitle').value;
-            const price = parseFloat(document.getElementById('newPrice').value);
-            const category = document.getElementById('newCategory').value;
-            const status = document.getElementById('newStatus').value;
-            const discount = document.getElementById('newDiscount').value;
-            const desc = document.getElementById('newDesc').value;
-            const fileInput = document.getElementById('newImagesFiles');
-
-            if (fileInput.files && fileInput.files.length > 0) {
-                let imagesArray = [];
-                let filesCount = fileInput.files.length;
-                let loadedCount = 0;
-
-                Array.from(fileInput.files).forEach((file, index) => {
-                    const reader = new FileReader();
-                    reader.onload = function(evt) {
-                        imagesArray[index] = evt.target.result;
-                        loadedCount++;
-                        if(loadedCount === filesCount) {
-                            products.unshift({ 
-                                id: Date.now(), 
-                                title, 
-                                price, 
-                                category, 
-                                status, 
-                                discount, 
-                                desc, 
-                                images: imagesArray 
-                            });
-                            finishAdd();
-                        }
-                    };
-                    reader.readAsDataURL(file);
-                });
-            } else {
-                products.unshift({ 
-                    id: Date.now(), 
-                    title, 
-                    price, 
-                    category, 
-                    status, 
-                    discount, 
-                    desc, 
-                    images: [emptyImageSvg] 
-                });
-                finishAdd();
-            }
-
-            function finishAdd() {
-                saveData();
-                renderProducts(activeCategoryFilter);
-                renderAdminInventoryTable();
-                showToast(`Added "${title}" with Gallery`);
-                document.getElementById('newTitle').value = '';
-                document.getElementById('newPrice').value = '';
-                document.getElementById('newDiscount').value = '';
-                document.getElementById('newDesc').value = '';
-                fileInput.value = '';
-            }
-        }
-
-        function renderAdminInventoryTable() {
-            const tbody = document.getElementById('adminProductsTable');
-            tbody.innerHTML = '';
-            document.getElementById('adminProductCount').textContent = `${products.length} Items`;
-
-            products.forEach(p => {
-                const tblImg = (p.images && p.images.length > 0) ? p.images[0] : emptyImageSvg;
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-zinc-900/50 transition-colors';
-                tr.innerHTML = `
-                    <td class="p-3"><img src="${tblImg}" class="w-9 h-9 object-cover rounded-lg border border-zinc-800"></td>
-                    <td class="p-3 text-white font-sans font-medium">${p.title}</td>
-                    <td class="p-3 uppercase text-[10px] ${p.status === 'sold' ? 'text-rose-400' : 'text-emerald-400'}">${p.status === 'sold' ? 'Sold Out' : 'Available'} (${p.images.length} imgs)</td>
-                    <td class="p-3 text-white font-mono">$${p.price.toLocaleString()}</td>
-                    <td class="p-3 text-right space-x-2">
-                        <button type="button" onclick="openEditModal(${p.id})" class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-aura-gold hover:text-zinc-950 text-zinc-300 transition-colors cursor-pointer">Edit</button>
-                        <button type="button" onclick="deleteProduct(${p.id})" class="px-2.5 py-1 rounded bg-rose-950/40 hover:bg-rose-900 text-rose-300 transition-colors cursor-pointer">Delete</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function openEditModal(id) {
-            const p = products.find(x => x.id === id);
-            if (!p) return;
-            document.getElementById('editProdId').value = p.id;
-            document.getElementById('editTitle').value = p.title;
-            document.getElementById('editPrice').value = p.price;
-            document.getElementById('editCategory').value = p.category;
-            document.getElementById('editStatus').value = p.status || 'available';
-            document.getElementById('editDiscount').value = p.discount || '';
-            document.getElementById('editDesc').value = p.desc || '';
-            document.getElementById('editImagesFiles').value = '';
-            document.getElementById('editModal').classList.remove('hidden');
-        }
-
-        function closeEditModal() {
-            document.getElementById('editModal').classList.add('hidden');
-        }
-
-        function saveProductEdit(e) {
-            e.preventDefault();
-            const id = parseInt(document.getElementById('editProdId').value);
-            const p = products.find(x => x.id === id);
-            if (!p) return;
-
-            p.title = document.getElementById('editTitle').value;
-            p.price = parseFloat(document.getElementById('editPrice').value);
-            p.category = document.getElementById('editCategory').value;
-            p.status = document.getElementById('editStatus').value;
-            p.discount = document.getElementById('editDiscount').value;
-            p.desc = document.getElementById('editDesc').value;
-
-            const fileInput = document.getElementById('editImagesFiles');
-            if (fileInput.files && fileInput.files.length > 0) {
-                let newImagesArray = [];
-                let filesCount = fileInput.files.length;
-                let loadedCount = 0;
-
-                Array.from(fileInput.files).forEach((file, index) => {
-                    const reader = new FileReader();
-                    reader.onload = function(evt) {
-                        newImagesArray[index] = evt.target.result;
-                        loadedCount++;
-                        if(loadedCount === filesCount) {
-                            p.images = newImagesArray;
-                            finishEdit();
-                        }
-                    };
-                    reader.readAsDataURL(file);
-                });
-            } else {
-                finishEdit();
-            }
-
-            function finishEdit() {
-                saveData();
-                renderProducts(activeCategoryFilter);
-                renderAdminInventoryTable();
-                closeEditModal();
-                showToast(`Updated "${p.title}" Gallery`);
-            }
-        }
-
-        function deleteProduct(id) {
-            products = products.filter(x => x.id !== id);
-            saveData();
-            renderProducts(activeCategoryFilter);
-            renderAdminInventoryTable();
-            showToast('Item Deleted');
-        }
-
-        function renderAdminOrders() {
-            const pendingList = document.getElementById('adminPendingOrdersList');
-            const activeList = document.getElementById('adminActiveOrdersList');
-            
-            pendingList.innerHTML = '';
-            activeList.innerHTML = '';
-
-            const pendingOrders = orders.filter(o => o.status === 'Pending Verification' || o.status === 'Cancellation Requested');
-            const activeOrders = orders.filter(o => o.status === 'Approved & Dispatched' || o.status.includes('قيد التنفيذ'));
-
-            document.getElementById('pendingOrdersCount').textContent = `${pendingOrders.length} Pending`;
-            document.getElementById('activeOrdersCount').textContent = `${activeOrders.length} Active`;
-
-            if (pendingOrders.length === 0) {
-                pendingList.innerHTML = `<div class="text-zinc-500 text-center py-4">No pending customer orders.</div>`;
-            } else {
-                pendingOrders.forEach((ord) => {
-                    const realIndex = orders.findIndex(o => o.id === ord.id);
-                    const displayTotal = ord.formattedTotal || `$${ord.total.toLocaleString()}`;
-                    const isCancellation = ord.status === 'Cancellation Requested';
-                    const div = document.createElement('div');
-                    div.className = `glass-panel p-3 rounded-xl space-y-2 ${isCancellation ? 'border-rose-900/50 bg-rose-950/10' : ''}`;
-                    div.innerHTML = `
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-white">${ord.id} &bull; ${ord.customer}</span>
-                            <span class="font-mono" style="color: var(--aura-main, #dfb254);">${displayTotal}</span>
-                        </div>
-                        <div class="text-[10px] text-zinc-400">Items: ${ord.items}</div>
-                        ${isCancellation ? `<div class="text-[10px] text-rose-400 font-bold">⚠️ Cancellation Requested by Customer</div>` : ''}
-                        <div class="flex items-center justify-between pt-2 border-t border-zinc-900 gap-1">
-                            <div class="space-x-1 flex">
-                                <button type="button" onclick="viewReceipt('${ord.receiptUrl}')" class="px-2 py-1 bg-zinc-900 rounded hover:bg-zinc-800 cursor-pointer text-[10px]" style="color: var(--aura-main, #dfb254);">Receipt</button>
-                                <button type="button" onclick="openAdminChatModal(${realIndex})" class="px-2 py-1 bg-zinc-900 text-zinc-200 rounded hover:bg-zinc-800 cursor-pointer text-[10px]">Chat &amp; Reply</button>
-                            </div>
-                            <div class="space-x-1">
-                                <button type="button" onclick="promptApproveOrder(${realIndex})" class="px-2.5 py-1 bg-emerald-950/60 text-emerald-400 rounded hover:bg-emerald-900 cursor-pointer text-[10px]">Accept</button>
-                                <button type="button" onclick="rejectOrder(${realIndex})" class="px-2.5 py-1 bg-rose-950/60 text-rose-400 rounded hover:bg-rose-900 cursor-pointer text-[10px]">Reject / Cancel</button>
-                            </div>
-                        </div>
-                    `;
-                    pendingList.appendChild(div);
-                });
-            }
-
-            if (activeOrders.length === 0) {
-                activeList.innerHTML = `<div class="text-zinc-500 text-center py-4">No active orders in progress.</div>`;
-            } else {
-                activeOrders.forEach((ord) => {
-                    const realIndex = orders.findIndex(o => o.id === ord.id);
-                    const displayTotal = ord.formattedTotal || `$${ord.total.toLocaleString()}`;
-                    const div = document.createElement('div');
-                    div.className = 'glass-panel p-3 rounded-xl space-y-2 border-emerald-900/40 bg-emerald-950/10';
-                    div.innerHTML = `
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-white">${ord.id} &bull; ${ord.customer}</span>
-                            <span class="font-mono text-emerald-400">${displayTotal}</span>
-                        </div>
-                        <div class="text-[10px] text-zinc-400">Items: ${ord.items}</div>
-                        <div class="text-[10px] text-emerald-300 font-mono bg-emerald-950/40 px-2 py-1 rounded border border-emerald-900/50">
-                            ETA: ${ord.eta || 'Insured Geneva Express'}
-                        </div>
-                        <div class="flex items-center justify-between pt-2 border-t border-zinc-900">
-                            <div class="space-x-1 flex">
-                                <button type="button" onclick="viewReceipt('${ord.receiptUrl}')" class="px-2 py-1 bg-zinc-900 rounded hover:bg-zinc-800 cursor-pointer text-[10px]" style="color: var(--aura-main, #dfb254);">Receipt</button>
-                                <button type="button" onclick="openAdminChatModal(${realIndex})" class="px-2 py-1 bg-zinc-900 text-zinc-200 rounded hover:bg-zinc-800 cursor-pointer text-[10px]">Chat &amp; Reply</button>
-                            </div>
-                            <button type="button" onclick="completeOrder(${realIndex})" class="px-2.5 py-1 bg-zinc-900 text-zinc-300 hover:text-white rounded hover:bg-zinc-800 cursor-pointer text-[10px]">Archive / Delete</button>
-                        </div>
-                    `;
-                    activeList.appendChild(div);
-                });
-            }
-            lucide.createIcons();
-        }
-
-        function promptApproveOrder(index) {
-            selectedOrderIndexForApproval = index;
-            document.getElementById('etaInputText').value = "Insured Geneva Express Delivery • Expected in 48h";
-            document.getElementById('etaModal').classList.remove('hidden');
-        }
-
-        function closeEtaModal() {
-            document.getElementById('etaModal').classList.add('hidden');
-            selectedOrderIndexForApproval = null;
-        }
-
-        function confirmApproveOrder() {
-            if (selectedOrderIndexForApproval === null) return;
-            const etaVal = document.getElementById('etaInputText').value.trim() || "Insured Geneva Express";
-
-            const ord = orders[selectedOrderIndexForApproval];
-            ord.status = 'Approved & Dispatched';
-            ord.eta = etaVal;
-
-            if (!ord.messages) ord.messages = [];
-            ord.messages.push({
-                sender: 'admin',
-                text: `Your order ${ord.id} has been verified and dispatched! Delivery ETA: ${etaVal}`,
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            });
-
-            saveData();
-            renderAdminOrders();
-            closeEtaModal();
-            showToast('Order Approved & Moved to In-Progress!');
-            updateFloatingBadge();
-
-            document.getElementById('trackingSection').classList.remove('hidden');
-            document.getElementById('trackingStatusText').textContent = `Your order (${ord.id}) has been approved & dispatched!`;
-            document.getElementById('trackingEtaBox').textContent = `ESTIMATED ARRIVAL: ${etaVal}`;
-        }
-
-        function rejectOrder(index) {
-            const ord = orders[index];
-            ord.status = 'Cancelled / Rejected';
-            ord.eta = 'Order Cancelled';
-
-            if (!ord.messages) ord.messages = [];
-            ord.messages.push({
-                sender: 'admin',
-                text: `Order ${ord.id} cancellation has been approved/processed by admin.`,
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            });
-
-            saveData();
-            renderAdminOrders();
-            showToast('Order Cancelled Successfully');
-            updateFloatingBadge();
-
-            document.getElementById('trackingSection').classList.remove('hidden');
-            document.getElementById('trackingStatusText').textContent = `Order (${ord.id}) has been cancelled.`;
-            document.getElementById('trackingEtaBox').textContent = `STATUS: CANCELLED`;
-        }
-
-        function completeOrder(index) {
-            orders.splice(index, 1);
-            saveData();
-            renderAdminOrders();
-            updateFloatingBadge();
-            showToast('Order archived successfully');
-        }
-
-        function viewReceipt(url) {
-            document.getElementById('receiptModalImg').src = url;
-            document.getElementById('receiptModal').classList.remove('hidden');
-        }
-
-        function closeReceiptModal() {
-            document.getElementById('receiptModal').classList.add('hidden');
+        function scrollToCatalog() {
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
-            document.getElementById('toastMsg').textContent = msg;
-            toast.classList.add('translate-y-0', 'opacity-100');
+            document.getElementById('toastMsg').innerText = msg;
             toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 3000);
         }
 
+        // INITIALIZATION
+        applyTheme();
         applyThemeColors();
-        renderProducts();
         updateUI();
-        updateFloatingBadge();
-        renderAdminPromoTable();
-        renderAdminReviewsTable();
     </script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyD7dspBotZ9MbRYE5KSPJW-_IHYjsBn-ro",
-    authDomain: "aura-vault-d77d2.firebaseapp.com",
-    projectId: "aura-vault-d77d2",
-    storageBucket: "aura-vault-d77d2.firebasestorage.app",
-    messagingSenderId: "846063839880",
-    appId: "1:846063839880:web:3edcce28910135b2cb0d3d",
-    measurementId: "G-J2586CEEJ6"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-<script type="module">
-  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-database.js";
-
-  window.auraSendOrderToFirebase = function(orderData) {
-    try {
-      const db = getDatabase();
-      const ordersRef = ref(db, 'orders');
-      const newOrderRef = push(ordersRef);
-      
-      const finalOrder = {
-        orderId: "AURA-" + Math.floor(1000 + Math.random() * 9000),
-        timestamp: new Date().toISOString(),
-        ...orderData
-      };
-
-      set(newOrderRef, finalOrder)
-        .then(() => {
-          console.log("Order successfully saved to Firebase Vault!", finalOrder);
-          alert("تم إرسال الأوردر بنجاح وتخزينه في قاعدة البيانات! 💎");
-        })
-        .catch((error) => {
-          console.error("Error saving order: ", error);
-        });
-    } catch (err) {
-      console.error("Firebase DB Error: ", err);
-    }
-  };
-
-  console.log("AURA Vault Firebase V13 Sync Active 🛡️");
-</script>
 </body>
 </html>
